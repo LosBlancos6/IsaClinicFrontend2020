@@ -1,0 +1,40 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div><a href="https:/www.google.com" class="navbar-brand">Clinic
+      </a></div>
+    <ul class="navbar-nav">
+      <li><a routerLink="/login" class="nav-link">Home</a></li>
+    </ul>
+
+    <ul class="navbar-nav navbar-collapse justify-content-end">
+      <li><a routerLink="/login" class="nav-link">Login</a>
+      </li>
+      <li><a routerLink="/logout" class="nav-link">Logout</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<ng-sidebar-container>
+  <!-- Sidebar-->
+  <ng-sidebar [opened]="opened">
+    <p>Sidebar Contents</p>
+    <button (click)="toggleSidebar()">Close Sidebar</button>
+    <ul class="menu">
+      <li><a routerLink="/" (click)="toggleSidebar()">Dashboard</a></li>
+      <li><a routerLink="/auth" (click)="toggleSidebar()">Posts</a></li>
+      <li><a routerLink="/contact" (click)="toggleSidebar()">Contact</a></li>
+    </ul>
+  </ng-sidebar>
+
+  <div ng-sidebar-content>
+    <!--Page Header-->
+    <button (click)="toggleSidebar()">
+      Open Sidebar
+    </button>
+
+    <!--Page Body-->
+    <router-outlet></router-outlet>
+
+  </div>
+</ng-sidebar-container>
