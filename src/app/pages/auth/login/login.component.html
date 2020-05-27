@@ -11,8 +11,8 @@
 
     <!-- Login Form -->
     <form [formGroup]="loginForm">
-      <input type="text" id="email" class="fadeIn second" name="email" placeholder="email" formControlName="email">
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password"
+      <input type="text" id="email" class="fadeIn second" name="email" placeholder="Email" formControlName="email">
+      <input type="text" id="password" class="fadeIn third" name="password" placeholder="Password"
         formControlName="password">
       <input (click)="onLogin()" [disabled]="!loginForm.valid" type="submit" class="fadeIn fourth" value="Log In">
     </form>
@@ -21,7 +21,7 @@
     </div> -->
     <!-- Remind Passowrd -->
     <div id="formFooter">
-      <a class="underlineHover" href="#">Forgot Password?</a>
+      <a class="underlineHover" routerLink="/auth/registration">Register now?</a>
     </div>
 
   </div>

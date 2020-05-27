@@ -1,3 +1,43 @@
-<p>
-  registration works!
-</p>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <img src="https://pngimage.net/wp-content/uploads/2018/06/registration-logo-png-7.png" id="icon"
+                alt="User Icon" />
+        </div>
+
+        <!-- Login Form -->
+        <form [formGroup]="registerForm">
+            <input type="text" id="firstName" class="fadeIn second" name="firstName" placeholder="First name"
+                formControlName="firstName">
+            <input type="text" id="lastName" class="fadeIn second" name="lastName" placeholder="Last name"
+                formControlName="lastName">
+            <input type="text" id="country" class="fadeIn second" name="country" placeholder="Country"
+                formControlName="country">
+            <input type="text" id="city" class="fadeIn second" name="city" placeholder="City" formControlName="city">
+            <input type="text" id="address" class="fadeIn second" name="address" placeholder="Address"
+                formControlName="address">
+            <input type="text" id="ssn" class="fadeIn second" name="ssn" placeholder="Social Security Number"
+                formControlName="ssn">
+            <input type="text" id="email" class="fadeIn second" name="email" placeholder="Email"
+                formControlName="email">
+            <input type="text" id="password" class="fadeIn third" name="password" placeholder="Password"
+                formControlName="password">
+            <input type="text" id="rePassword" class="fadeIn third" name="rePassword" placeholder="Confirm Password"
+                formControlName="rePassword">
+            <input type="text" id="phoneNumber" class="fadeIn third" name="phoneNumber" placeholder="Phone Numbe"
+                formControlName="phoneNumber">
+            <input style="height: 50px;" (click)="onRegister()" [disabled]="!registerForm.valid" type="submit"
+                class="fadeIn fourth" value="Register">
+
+        </form>
+        <!-- <div>
+      {{errorMessage}}
+    </div> -->
+        <!-- Remind Passowrd -->
+
+
+    </div>
+</div>
