@@ -5,6 +5,7 @@ import { IsaComponent } from './pages/isa/isa.component';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegistrationComponent } from './pages/auth/registration/registration.component';
 import { AdminComponent } from './pages/isa/profile/admin/admin.component';
+import { MyProfileComponent } from './pages/isa/profile/my-profile/my-profile.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/auth/login' },
@@ -17,6 +18,7 @@ const routes: Routes = [
   {
     path: 'dashboard', component: IsaComponent, children: [
       { path: 'admin-profile', component: AdminComponent },
+      { path: 'my-profile', component: MyProfileComponent },
     ]
   }
 ];

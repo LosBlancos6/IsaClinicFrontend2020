@@ -21,6 +21,11 @@
     <p>Sidebar Contents</p>
     <button (click)="toggleSidebar()">Close Sidebar</button>
     <ul class="menu">
+      <li><a routerLink="/dashboard/my-profile" (click)="toggleSidebar()">My Profile</a></li>
+      <li><a routerLink="/dashboard/admin-profile" (click)="toggleSidebar()">Posts</a></li>
+      <li><a routerLink="/contact" (click)="toggleSidebar()">Contact</a></li>
+    </ul>
+    <ul class="menu">
       <li><a routerLink="/" (click)="toggleSidebar()">Dashboard</a></li>
       <li><a routerLink="/auth" (click)="toggleSidebar()">Posts</a></li>
       <li><a routerLink="/contact" (click)="toggleSidebar()">Contact</a></li>

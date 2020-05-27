@@ -11,6 +11,7 @@ import { IsaComponent } from './pages/isa/isa.component';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegistrationComponent } from './pages/auth/registration/registration.component';
 import { AdminComponent } from './pages/isa/profile/admin/admin.component';
+import { MyProfileComponent } from './pages/isa/profile/my-profile/my-profile.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AdminComponent } from './pages/isa/profile/admin/admin.component';
     LoginComponent,
     RegistrationComponent,
     AdminComponent,
+    MyProfileComponent,
   ],
   imports: [
     BrowserModule,
