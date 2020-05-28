@@ -1,6 +1,6 @@
 <header>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <div><a href="https:/www.google.com" class="navbar-brand">Clinic
+    <div><a href="https:/www.google.com" class="navbar-brand">IsaClinic2020
       </a></div>
     <ul class="navbar-nav">
       <li><a routerLink="/login" class="nav-link">Home</a></li>
@@ -18,28 +18,29 @@
 <ng-sidebar-container>
   <!-- Sidebar-->
   <ng-sidebar [opened]="opened">
-    <p>Sidebar Contents</p>
-    <button (click)="toggleSidebar()">Close Sidebar</button>
+    <button id="two" (click)="toggleSidebar()" class="btn btn-outline-danger">Close Sidebar</button>
     <ul class="menu">
-      <li><a routerLink="/dashboard/my-profile" (click)="toggleSidebar()">My Profile</a></li>
-      <li><a routerLink="/dashboard/admin-profile" (click)="toggleSidebar()">Posts</a></li>
-      <li><a routerLink="/contact" (click)="toggleSidebar()">Contact</a></li>
+      <li class="btn btn-light"><a routerLink="/dashboard/my-profile">My
+          Profile</a></li>
     </ul>
     <ul class="menu">
-      <li><a routerLink="/" (click)="toggleSidebar()">Dashboard</a></li>
-      <li><a routerLink="/auth" (click)="toggleSidebar()">Posts</a></li>
-      <li><a routerLink="/contact" (click)="toggleSidebar()">Contact</a></li>
+      <li class="btn btn-light"><a routerLink="/">Dashboard</a></li>
+      <li class="btn btn-light"><a routerLink="/auth">Posts</a></li>
+      <li class="btn btn-light"><a routerLink="/contact">Contact</a></li>
     </ul>
   </ng-sidebar>
 
   <div ng-sidebar-content>
     <!--Page Header-->
-    <button (click)="toggleSidebar()">
+    <button (click)="toggleSidebar()" class="btn btn-outline-primary">
       Open Sidebar
     </button>
 
     <!--Page Body-->
-    <router-outlet></router-outlet>
+    <div id="one">
+      <router-outlet></router-outlet>
+    </div>
+
 
   </div>
 </ng-sidebar-container>

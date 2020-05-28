@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IsaComponent implements OnInit {
 
-  opened = false;
+  opened = true;
 
   constructor() { }
 
