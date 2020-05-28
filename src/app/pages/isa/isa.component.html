@@ -3,13 +3,11 @@
     <div><a href="https:/www.google.com" class="navbar-brand">IsaClinic2020
       </a></div>
     <ul class="navbar-nav">
-      <li><a routerLink="/login" class="nav-link">Home</a></li>
+      <li><a routerLink="/auth/login" class="nav-link">Home</a></li>
     </ul>
 
     <ul class="navbar-nav navbar-collapse justify-content-end">
-      <li><a routerLink="/login" class="nav-link">Login</a>
-      </li>
-      <li><a routerLink="/logout" class="nav-link">Logout</a>
+      <li><a routerLink="/auth/login" class="nav-link">Logout</a>
       </li>
     </ul>
   </nav>
@@ -35,7 +33,7 @@
 
   <div ng-sidebar-content>
     <!--Page Header-->
-    <button (click)="toggleSidebar()" class="btn btn-outline-primary">
+    <button (click)="toggleSidebar()" class="btn btn-primary">
       Open Sidebar
     </button>
 

@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 body {
     margin: 0;
+    background-image: url('https://cdn.pixabay.com/photo/2016/03/30/18/07/the-syringe-1291129_1280.jpg');
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
 }
