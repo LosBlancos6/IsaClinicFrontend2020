@@ -12,6 +12,11 @@ import { LoginComponent } from './pages/auth/login/login.component';
 import { RegistrationComponent } from './pages/auth/registration/registration.component';
 import { AdminComponent } from './pages/isa/profile/admin/admin.component';
 import { MyProfileComponent } from './pages/isa/profile/my-profile/my-profile.component';
+import { AdminListComponent } from './pages/isa/list/admin-list/admin-list.component';
+import { ClinicListComponent } from './pages/isa/list/clinic-list/clinic-list.component';
+import { MedicalListComponent } from './pages/isa/list/medical-list/medical-list.component';
+import { PatientListComponent } from './pages/isa/list/patient-list/patient-list.component';
+import { NotFoundComponent } from './pages/auth/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +27,11 @@ import { MyProfileComponent } from './pages/isa/profile/my-profile/my-profile.co
     RegistrationComponent,
     AdminComponent,
     MyProfileComponent,
+    AdminListComponent,
+    ClinicListComponent,
+    MedicalListComponent,
+    PatientListComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

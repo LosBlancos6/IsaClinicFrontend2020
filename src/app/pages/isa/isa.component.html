@@ -20,13 +20,16 @@
   <ng-sidebar [opened]="opened">
     <button id="two" (click)="toggleSidebar()" class="btn btn-outline-danger">Close Sidebar</button>
     <ul class="menu">
+      <span class="badge badge-secondary" style="width: 50px;">Profile</span>
       <li class="btn btn-light"><a routerLink="/dashboard/my-profile">My
           Profile</a></li>
     </ul>
     <ul class="menu">
-      <li class="btn btn-light"><a routerLink="/">Dashboard</a></li>
-      <li class="btn btn-light"><a routerLink="/auth">Posts</a></li>
-      <li class="btn btn-light"><a routerLink="/contact">Contact</a></li>
+      <span class="badge badge-secondary" style="width: 50px;">List</span>
+      <li class="btn btn-light"><a routerLink="/dashboard/admin-list">Admins</a></li>
+      <li class="btn btn-light"><a routerLink="/dashboard/medical-list">Medicals</a></li>
+      <li class="btn btn-light"><a routerLink="/dashboard/patient-list">Patients</a></li>
+      <li class="btn btn-light"><a routerLink="/dashboard/clinic-list">Clinics</a></li>
     </ul>
   </ng-sidebar>
 
