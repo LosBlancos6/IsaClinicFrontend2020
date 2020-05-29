@@ -1,10 +1,12 @@
 <header>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <div><a href="https:/www.google.com" class="navbar-brand">IsaClinic2020
+    <div><a (click)="toggleSidebar()" class="navbar-brand"><img
+          src="https://i.ya-webdesign.com/images/menu-icon-png-3-lines-16.png"
+          style="width: 35px; height: 35px;  cursor:pointer;" alt="">
       </a></div>
-    <ul class="navbar-nav">
-      <li><a routerLink="/auth/login" class="nav-link">Home</a></li>
-    </ul>
+    <div class="navbar-brand">
+      <a>IsaClinic2020</a>
+    </div>
 
     <ul class="navbar-nav navbar-collapse justify-content-end">
       <li><a routerLink="/auth/login" class="nav-link">Logout</a>
@@ -16,7 +18,7 @@
 <ng-sidebar-container>
   <!-- Sidebar-->
   <ng-sidebar [opened]="opened">
-    <button id="two" (click)="toggleSidebar()" class="btn btn-outline-danger">Close Sidebar</button>
+    <!-- <button id="two" (click)="toggleSidebar()" class="btn btn-outline-danger">Close Sidebar</button> -->
     <ul class="menu">
       <span class="badge badge-secondary" style="width: 50px;">Profile</span>
       <li class="btn btn-light"><a routerLink="/dashboard/my-profile">My
@@ -33,9 +35,9 @@
 
   <div ng-sidebar-content>
     <!--Page Header-->
-    <button (click)="toggleSidebar()" class="btn btn-primary">
+    <!-- <button (click)="toggleSidebar()" class="btn btn-primary">
       Open Sidebar
-    </button>
+    </button> -->
 
     <!--Page Body-->
     <div id="one">
