@@ -25,11 +25,11 @@ export class RegistrationComponent implements OnInit {
       country: [null, [Validators.required, Validators.minLength(3)]],
       city: [null, [Validators.required, Validators.minLength(3)]],
       address: [null, [Validators.required, Validators.minLength(3)]],
-      ssn: [null, [Validators.required, Validators.minLength(3)]],
-      email: [null, [Validators.required, Validators.minLength(3)]],
+      ssn: [null, [Validators.required, Validators.minLength(3), Validators.pattern("^[0-9]*$")]],
+      email: [null, [Validators.required, Validators.email]],
       password: [null, [Validators.required, Validators.minLength(3)]],
       rePassword: [null, [Validators.required, Validators.minLength(3)]],
-      phoneNumber: [null, [Validators.required, Validators.minLength(3)]],
+      phoneNumber: [null, [Validators.required, Validators.minLength(3), Validators.pattern("^[0-9]*$")]],
     });
   }
 
