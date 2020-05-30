@@ -17,6 +17,10 @@ import { ClinicListComponent } from './pages/isa/list/clinic-list/clinic-list.co
 import { MedicalListComponent } from './pages/isa/list/medical-list/medical-list.component';
 import { PatientListComponent } from './pages/isa/list/patient-list/patient-list.component';
 import { NotFoundComponent } from './pages/auth/not-found/not-found.component';
+import { ClinicComponent } from './pages/isa/profile/clinic/clinic.component';
+import { MedicalComponent } from './pages/isa/profile/medical/medical.component';
+import { PatientComponent } from './pages/isa/profile/patient/patient.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,6 +36,9 @@ import { NotFoundComponent } from './pages/auth/not-found/not-found.component';
     MedicalListComponent,
     PatientListComponent,
     NotFoundComponent,
+    ClinicComponent,
+    MedicalComponent,
+    PatientComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +47,7 @@ import { NotFoundComponent } from './pages/auth/not-found/not-found.component';
     FormsModule,
     ReactiveFormsModule,
     SidebarModule.forRoot(),
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

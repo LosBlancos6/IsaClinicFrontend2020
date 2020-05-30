@@ -1,3 +1,66 @@
-<p>
-  patient-list works!
-</p>
+<div class="fadeInDown">
+  <h3>Patient List</h3>
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        <td><a style="cursor:pointer;">View</a></td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+        <td><a style="cursor:pointer;">View</a></td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+        <td><a style="cursor:pointer;">View</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 
+<div>
+  <h3>List of Certificates</h3>
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Date Of Issue</th>
+        <th scope="col">Expiry Date</th>
+        <th scope="col">Type</th>
+        <th scope="col">Is Revoked</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of listOfData">
+        <th scope="row">{{data.id}}</th>
+        <td>{{formatDate(data.datumIzdavanja)}}</td>
+        <td>{{formatDate(data.datumIsteka)}}</td>
+        <td>{{data.tip}}</td>
+        <td>{{data.revoked}}</td>
+        <td>
+          <button (click)="onRevoke(data.id)" type="button" class="btn btn-secondary">Revoke</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->

@@ -1,1 +1,26 @@
-<h1>admin!</h1>
+<div>
+    <form [formGroup]="adminForm">
+        <h3>Your Profile</h3>
+        <input type="text" class="form-control" placeholder="First name" aria-label="First name"
+            aria-describedby="basic-addon1" formControlName="firstName">
+        <input type="text" class="form-control" placeholder="Last name" aria-label="Last name"
+            aria-describedby="basic-addon1" formControlName="lastName">
+        <input type="text" class="form-control" placeholder="Country" aria-label="Country"
+            aria-describedby="basic-addon1" formControlName="country">
+        <input type="text" class="form-control" placeholder="City" aria-label="City" aria-describedby="basic-addon1"
+            formControlName="city">
+        <input type="text" class="form-control" placeholder="Address" aria-label="Address"
+            aria-describedby="basic-addon1" formControlName="address">
+        <input type="text" class="form-control" placeholder="Social Security Number" aria-label="Social Security Number"
+            aria-describedby="basic-addon1" formControlName="ssn">
+        <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1"
+            formControlName="email">
+        <input type="text" class="form-control" placeholder="Phone Number" aria-label="Phone Number"
+            aria-describedby="basic-addon1" formControlName="phone">
+        <button style="margin-top: 10px; width: 25%;" type="button" class="btn btn-secondary">Save your changes</button>
+    </form>
+</div>
+<!-- <label style="display:flex">
+    <span class='label'>Your label</span>
+    <input type=" text" class="form-control" placeholder="Country" aria-label="Country" aria-describedby="basic-addon1">
+</label> -->

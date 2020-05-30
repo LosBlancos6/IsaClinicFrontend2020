@@ -55,10 +55,9 @@
                 class="text-danger">
                 Please
                 input minimum 3 characters!</div>
-            <input type="text" id="phoneNumber" class="fadeIn third" name="phoneNumber" placeholder="Phone Number"
-                formControlName="phoneNumber">
-            <div *ngIf="registerForm.get('phoneNumber')?.dirty && registerForm.get('phoneNumber')?.errors"
-                class="text-danger">
+            <input type="text" id="phone" class="fadeIn third" name="phone" placeholder="Phone Number"
+                formControlName="phone">
+            <div *ngIf="registerForm.get('phone')?.dirty && registerForm.get('phone')?.errors" class="text-danger">
                 Please
                 input only numbers(minimum 3)!</div>
             <input style="height: 50px;" (click)="onRegister()" [disabled]="!registerForm.valid" type="submit"

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { PatientService } from 'src/app/services/patient.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -10,7 +12,7 @@ export class RegistrationComponent implements OnInit {
 
   public registerForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private patietnService: PatientService, private router: Router) {
     this.registerForm = this.createForm();
   }
 
@@ -29,12 +31,17 @@ export class RegistrationComponent implements OnInit {
       email: [null, [Validators.required, Validators.email]],
       password: [null, [Validators.required, Validators.minLength(3)]],
       rePassword: [null, [Validators.required, Validators.minLength(3)]],
-      phoneNumber: [null, [Validators.required, Validators.minLength(3), Validators.pattern("^[0-9]*$")]],
+      phone: [null, [Validators.required, Validators.minLength(3), Validators.pattern("^[0-9]*$")]],
     });
   }
 
   onRegister() {
-    console.log(this.registerForm.value);
+    // console.log(this.registerForm.value);
+    this.patietnService.createPatient(this.registerForm.value).subscribe(data => {
+      console.log(data);
+      alert('Registration Successful!');
+      this.router.navigateByUrl('auth/login');
+    });
   }
 
 
