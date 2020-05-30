@@ -46,9 +46,7 @@ export class PatientComponent implements OnInit {
   }
 
   private extractId(): void {
-
     this.id = this.user.id;
-
   }
 
   private getDetails(): void {
@@ -68,4 +66,8 @@ export class PatientComponent implements OnInit {
     })
   }
 
+  updatePatient(): void {
+    this.patientService.updatePatient(this.id, this.validateForm.value).subscribe(data =>
+      console.log(data));
+  }
 }

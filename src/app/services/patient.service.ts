@@ -12,12 +12,12 @@ export class PatientService {
 
   constructor(private http: HttpClient) { }
 
-  public createPatient(body): Observable<any> {
-    return this.http.post(this.baseUrl + 'auth/patients', body);
-  }
-
   public getPatientProfileById(id): Observable<any> {
     return this.http.get(`${this.baseUrl}patients/${id}`);
+  }
+
+  public updatePatient(id, body): Observable<any> {
+    return this.http.put(`${this.baseUrl}patients/${id}`, body);
   }
 
 }
