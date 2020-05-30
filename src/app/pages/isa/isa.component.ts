@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-isa',
@@ -9,7 +10,7 @@ export class IsaComponent implements OnInit {
 
   opened = true;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -17,6 +18,11 @@ export class IsaComponent implements OnInit {
 
   toggleSidebar() {
     this.opened = !this.opened;
+  }
+
+  onLogout() {
+    this.router.navigateByUrl('auth/login');
+    localStorage.removeItem('user');
   }
 
 }
