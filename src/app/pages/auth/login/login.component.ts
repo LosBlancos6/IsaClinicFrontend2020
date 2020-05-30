@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
       console.log(data);
       const user = data.user;
       localStorage.setItem('user', JSON.stringify(user));
-      this.router.navigateByUrl(`dashboard/patient-profile`);
+      this.router.navigateByUrl(`dashboard/my-profile`);
     }, error => {
       console.log(error.error.message)
       this.errorMessage = error.error.message;
