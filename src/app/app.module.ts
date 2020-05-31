@@ -22,6 +22,7 @@ import { MedicalComponent } from './pages/isa/profile/medical/medical.component'
 import { PatientComponent } from './pages/isa/profile/patient/patient.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PatientHomePageComponent } from './pages/isa/patient-home-page/patient-home-page.component';
+import { MedicalListByPatientComponent } from './pages/isa/medical-list-by-patient/medical-list-by-patient.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { PatientHomePageComponent } from './pages/isa/patient-home-page/patient-
     MedicalComponent,
     PatientComponent,
     PatientHomePageComponent,
+    MedicalListByPatientComponent,
   ],
   imports: [
     BrowserModule,

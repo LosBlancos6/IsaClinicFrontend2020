@@ -28,4 +28,8 @@ export class PatientHomePageComponent implements OnInit {
     this.router.navigateByUrl(`dashboard/clinic-profile/${id}`)
   }
 
+  onEnter(id) {
+    console.log(id);
+    this.router.navigateByUrl(`dashboard/medical-list-by-patient/${id}`);
+  }
 }

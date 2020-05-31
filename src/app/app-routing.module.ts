@@ -15,6 +15,7 @@ import { MedicalComponent } from './pages/isa/profile/medical/medical.component'
 import { PatientComponent } from './pages/isa/profile/patient/patient.component';
 import { ClinicComponent } from './pages/isa/profile/clinic/clinic.component';
 import { PatientHomePageComponent } from './pages/isa/patient-home-page/patient-home-page.component';
+import { MedicalListByPatientComponent } from './pages/isa/medical-list-by-patient/medical-list-by-patient.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/auth/login' },
@@ -40,6 +41,8 @@ const routes: Routes = [
       { path: 'clinic-list', component: ClinicListComponent },
 
       { path: 'choose-clinic', component: PatientHomePageComponent },
+      { path: 'medical-list-by-patient/:id', component: MedicalListByPatientComponent },
+
     ]
   },
   { path: '**', redirectTo: '/auth/not-found' }
