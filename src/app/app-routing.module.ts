@@ -36,7 +36,7 @@ const routes: Routes = [
       { path: 'my-profile', component: MyProfileComponent },
 
       { path: 'admin-list', component: AdminListComponent },
-      { path: 'medical-list', component: MedicalListComponent },
+      { path: 'clinic/:id/medical', component: MedicalListComponent },
       { path: 'patient-list', component: PatientListComponent },
       { path: 'clinic-list', component: ClinicListComponent },
 

@@ -34,10 +34,24 @@ export class LoginComponent implements OnInit {
       console.log(data);
       const user = data.user;
       localStorage.setItem('user', JSON.stringify(user));
-      if (user.userType === 'PATIENT') {
+      if (user.userType === 'MEDICAL') {
+        if (user.setNewPassword) {
+          const id = user.id;
+          this.router.navigateByUrl(`auth/first-password/${id}`);
+        } else {
+          const clinicId = user.myClinic.id;
+          this.router.navigateByUrl(`dashboard/clinic/${clinicId}/patients`);
+        }
+      } else if (user.userType === 'PATIENT') {
         this.router.navigateByUrl('dashboard/choose-clinic');
-      } else {
-        this.router.navigateByUrl(`dashboard/my-profile`);
+      } else if (user.userType === 'ADMIN') {
+        const adminType = user.adminType;
+        if (adminType === 'CLINIC_CENTER_ADMIN') {
+          this.router.navigateByUrl('dashboard/registration-requests');
+        } else if (adminType === 'CLINIC_ADMIN') {
+          const clinicId = user.myClinic.id;
+          this.router.navigateByUrl(`dashboard/clinic/${clinicId}/medical`);
+        }
       }
     }, error => {
       console.log(error.error.message)
