@@ -1,16 +1,24 @@
-<div>
+<div [formGroup]="validateForm">
   <h3>Clinic Profile</h3>
-  <input type="text" class="form-control" placeholder="First name" aria-label="First name"
-    aria-describedby="basic-addon1">
-  <input type="text" class="form-control" placeholder="Last name" aria-label="Last name"
-    aria-describedby="basic-addon1">
-  <input type="text" class="form-control" placeholder="Country" aria-label="Country" aria-describedby="basic-addon1">
-  <input type="text" class="form-control" placeholder="Address" aria-label="Address" aria-describedby="basic-addon1">
-  <input type="text" class="form-control" placeholder="Social Security Number" aria-label="Social Security Number"
-    aria-describedby="basic-addon1">
-  <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
-  <input type="text" class="form-control" placeholder="Phone Number" aria-label="Phone Number"
-    aria-describedby="basic-addon1">
-  <button style="margin-top: 10px; width: 30%;" type="button" class="btn btn-secondary">Save your changes</button>
 
+  <span style="display:flex">
+    <label>Name:</label>
+    <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1"
+      formControlName="name">
+  </span>
+
+  <span style="display:flex">
+    <label>Address:</label>
+    <input type="text" class="form-control" placeholder="Address" aria-label="Address" aria-describedby="basic-addon1"
+      formControlName="address">
+  </span>
+
+  <span style="display:flex">
+    <label>Description:</label>
+    <input type="text" class="form-control" placeholder="Description" aria-label="Description"
+      aria-describedby="basic-addon1" formControlName="description">
+  </span>
+
+  <button (click)="backToList()" style="margin-top: 10px; width: 30%;" type="button" class="btn btn-secondary">Back
+    to list</button>
 </div>
