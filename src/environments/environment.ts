@@ -5,6 +5,9 @@
 export const environment = {
   production: false,
   baseUrl: 'http://localhost:8080/',
+  patientRole: 'PATIENT',
+  medicalStaffRole: 'MEDICAL',
+  adminRole: 'ADMIN'
 };
 
 /*

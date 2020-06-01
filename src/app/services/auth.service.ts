@@ -20,4 +20,12 @@ export class AuthService {
     return this.http.post(this.baseUrl + 'auth/patients', body);
   }
 
+  public showByRole(roles: string[]): boolean {
+    const userRaw = localStorage.getItem('user');
+    const user = JSON.parse(userRaw);
+
+    return roles.some(role => role === user.userType);
+  }
+
+
 }

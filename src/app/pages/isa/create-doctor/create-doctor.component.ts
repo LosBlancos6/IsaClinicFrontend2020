@@ -72,7 +72,7 @@ export class CreateDoctorComponent implements OnInit {
       password: password,
       rePassword: rePassword,
       phone: phone,
-      medicalType: null,
+      medicalType: 'DOCTOR',
       examinationTypeId: null,
       startAt: null,
       endAt: null

@@ -23,7 +23,6 @@ export class PatientListComponent implements OnInit {
     this.form = this.setupForm();
   }
 
-
   private setupData(): void {
     this.patientService.getAllPatientsByClinic(this.id).subscribe(data => {
       console.log(data);
