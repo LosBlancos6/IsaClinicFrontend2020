@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PatientService } from 'src/app/services/patient.service';
 
 @Component({
@@ -18,7 +18,7 @@ export class PatientComponent implements OnInit {
   private id: string;
   private user: any;
 
-  constructor(private fb: FormBuilder, private route: ActivatedRoute, private patientService: PatientService) {
+  constructor(private fb: FormBuilder, private route: ActivatedRoute, private patientService: PatientService, private router: Router) {
   }
 
   ngOnInit() {
@@ -71,5 +71,9 @@ export class PatientComponent implements OnInit {
       console.log(data));
     alert('Update Successful!');
     this.ngOnInit();
+  }
+
+  backToList() {
+    this.router.navigateByUrl(`dashboard/choose-clinic`);
   }
 }

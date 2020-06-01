@@ -20,5 +20,9 @@ export class MedicalService {
     return this.http.get(`${this.baseUrl}medicalStaff/${id}`);
   }
 
+  public createDoctor(body, id): Observable<any> {
+    return this.http.post(`${this.baseUrl}medicalStaff/${id}`, body)
+  }
+
 
 }
