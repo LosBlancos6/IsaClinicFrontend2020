@@ -20,4 +20,8 @@ export class PatientService {
     return this.http.put(`${this.baseUrl}patients/${id}`, body);
   }
 
+  public getAllPatientsByClinic(id): Observable<any> {
+    return this.http.get(`${this.baseUrl}clinics/${id}/patients`);
+  }
+
 }

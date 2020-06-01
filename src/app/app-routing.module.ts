@@ -30,14 +30,14 @@ const routes: Routes = [
   {
     path: 'dashboard', component: IsaComponent, children: [
       { path: 'admin-profile', component: AdminComponent },
-      { path: 'medical-profile', component: MedicalComponent },
+      { path: 'medical-profile/:id', component: MedicalComponent },
       { path: 'patient-profile', component: PatientComponent },
       { path: 'clinic-profile/:id', component: ClinicComponent },
       { path: 'my-profile', component: MyProfileComponent },
 
       { path: 'admin-list', component: AdminListComponent },
       { path: 'clinic/:id/medical', component: MedicalListComponent },
-      { path: 'patient-list', component: PatientListComponent },
+      { path: 'clinic/:id/patients', component: PatientListComponent },
       { path: 'clinic-list', component: ClinicListComponent },
 
       { path: 'choose-clinic', component: PatientHomePageComponent },

@@ -4,11 +4,16 @@ input {
     margin-bottom: 10px;
 }
 
-
 div {
  margin: 20px;
  margin-right: 30%;
  padding: 20px;
  box-shadow: 0 0 2.5em rgba(85,85,85,0.5);
- height: 60vh;
+ height: 80vh;
+}
+
+label {
+   margin-top: 15px;
+   width: 20%;
+   font-family: Arial, Helvetica, sans-serif;
 }

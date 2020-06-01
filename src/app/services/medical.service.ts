@@ -16,5 +16,9 @@ export class MedicalService {
     return this.http.get(`${this.baseUrl}clinics/${id}/medical`);
   }
 
+  public getMedicalProfileById(id): Observable<any> {
+    return this.http.get(`${this.baseUrl}medicalStaff/${id}`);
+  }
+
 
 }

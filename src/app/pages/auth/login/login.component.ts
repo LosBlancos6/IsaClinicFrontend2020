@@ -36,8 +36,8 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('user', JSON.stringify(user));
       if (user.userType === 'MEDICAL') {
         if (user.setNewPassword) {
-          const id = user.id;
-          this.router.navigateByUrl(`auth/first-password/${id}`);
+          const clinicId = user.myClinic.id;
+          this.router.navigateByUrl(`dashboard/clinic/${clinicId}/patients`);
         } else {
           const clinicId = user.myClinic.id;
           this.router.navigateByUrl(`dashboard/clinic/${clinicId}/patients`);

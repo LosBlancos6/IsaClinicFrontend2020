@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'app-admin',
@@ -8,19 +10,30 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class AdminComponent implements OnInit {
 
-  public isReadOnly: boolean = true;
-  public adminForm: FormGroup;
+  validateForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
-    this.adminForm = this.createForm();
-  }
+  @Input()
+  public isReadOnly: boolean = true;
+
+  private id: string;
+  private user: any;
+
+  constructor(private route: ActivatedRoute, private adminService: AdminService, private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.setupUser();
+    this.setupForm();
+    this.extractId();
+    this.getDetails();
   }
 
-  private createForm(): FormGroup {
-    return this.fb.group({
-      firstName: [{ value: null, disabled: false }, [Validators.required]],
+  private setupUser(): void {
+    this.user = JSON.parse(localStorage.getItem('user'));
+  }
+
+  private setupForm(): void {
+    this.validateForm = this.fb.group({
+      firstName: [{ value: null, disabled: this.isReadOnly }, [Validators.required]],
       lastName: [{ value: null, disabled: this.isReadOnly }, [Validators.required]],
       country: [{ value: null, disabled: this.isReadOnly }, [Validators.required]],
       city: [{ value: null, disabled: this.isReadOnly }, [Validators.required]],
@@ -29,6 +42,31 @@ export class AdminComponent implements OnInit {
       email: [{ value: null, disabled: this.isReadOnly }, [Validators.email, Validators.required]],
       phone: [{ value: null, disabled: this.isReadOnly }, [Validators.required]]
     });
+  }
+
+  private extractId(): void {
+    if (this.isReadOnly) {
+      this.id = this.route.snapshot.params.id;
+    } else {
+      this.id = this.user.id;
+    }
+  }
+
+  private getDetails(): void {
+    this.adminService.getAdminProfileById(this.id).subscribe(data => {
+      console.log(data);
+      const formValues = {
+        email: data.email,
+        firstName: data.firstName,
+        lastName: data.lastName,
+        country: data.country,
+        city: data.city,
+        address: data.address,
+        phone: data.phone,
+        ssn: data.ssn
+      }
+      this.validateForm.setValue(formValues);
+    })
   }
 
 }
