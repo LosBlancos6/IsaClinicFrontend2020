@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
@@ -18,7 +18,7 @@ export class AdminComponent implements OnInit {
   private id: string;
   private user: any;
 
-  constructor(private route: ActivatedRoute, private adminService: AdminService, private fb: FormBuilder) { }
+  constructor(private route: ActivatedRoute, private adminService: AdminService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit() {
     this.setupUser();
@@ -67,6 +67,11 @@ export class AdminComponent implements OnInit {
       }
       this.validateForm.setValue(formValues);
     })
+  }
+
+  backToListClinics() {
+    const clinicId = this.user.myClinic.id;
+    this.router.navigateByUrl(`dashboard/clinic/${clinicId}/medical`);
   }
 
 }

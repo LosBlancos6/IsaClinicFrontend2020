@@ -13,6 +13,7 @@ export class CreateDoctorComponent implements OnInit {
   public validateForm: FormGroup;
 
   private id: string;
+  private user: any;
 
   constructor(private fb: FormBuilder, private route: ActivatedRoute, private medicalService: MedicalService, private router: Router) {
   }
@@ -85,5 +86,10 @@ export class CreateDoctorComponent implements OnInit {
     this.router.navigateByUrl(`/dashboard/clinic/${user.myClinic.id}/medical`)
   }
 
+  backToListClinics() {
+    this.user = JSON.parse(localStorage.getItem('user'));
+    const clinicId = this.user.myClinic.id;
+    this.router.navigateByUrl(`dashboard/clinic/${clinicId}/medical`);
+  }
 
 }

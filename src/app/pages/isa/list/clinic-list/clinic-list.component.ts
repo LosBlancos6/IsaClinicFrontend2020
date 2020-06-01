@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ClinicService } from 'src/app/services/clinic.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-clinic-list',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClinicListComponent implements OnInit {
 
-  constructor() { }
+  public listOfData = [];
+
+  constructor(private clinicService: ClinicService, private router: Router) { }
 
   ngOnInit() {
+    this.setupData();
+  }
+
+  private setupData(): void {
+    this.clinicService.getAllClinics().subscribe(data => {
+      this.listOfData = data;
+    })
+  }
+
+  onView(id) {
+    this.router.navigateByUrl(`dashboard/clinic-profile/${id}`)
   }
 
 }

@@ -27,9 +27,10 @@
     <ul class="menu">
       <span *ngIf="checkRole([adminRole, medicalRole])" class="badge badge-secondary" style="width: 50px;">List</span>
       <li *ngIf="checkRole([adminRole])" class="btn btn-light"><a routerLink="/dashboard/admin-list">Admins</a></li>
-      <li *ngIf="checkRole([adminRole])" class="btn btn-light"><a routerLink="/dashboard/medical-list">Medicals</a></li>
+      <li *ngIf="checkRole([adminRole])" class="btn btn-light"><a
+          [routerLink]="['/dashboard/clinic', user.myClinic.id, 'medical']">Medicals</a></li>
       <li *ngIf="checkRole([adminRole, medicalRole])" class="btn btn-light"><a
-          routerLink="/dashboard/patient-list">Patients</a></li>
+          [routerLink]="['/dashboard/clinic', user.myClinic.id, 'patients']">Patients</a></li>
       <li *ngIf="checkRole([adminRole])" class="btn btn-light"><a routerLink="/dashboard/clinic-list">Clinics</a></li>
     </ul>
   </ng-sidebar>

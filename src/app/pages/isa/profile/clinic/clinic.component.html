@@ -19,6 +19,11 @@
       aria-describedby="basic-addon1" formControlName="description">
   </span>
 
-  <button (click)="backToList()" style="margin-top: 10px; width: 30%;" type="button" class="btn btn-secondary">Back
+  <button *ngIf="checkRole([patientRole])" (click)="backToList()" style="margin-top: 10px; width: 30%;" type="button"
+    class="btn btn-secondary">Back
+    to list</button>
+
+  <button *ngIf="checkRole([adminRole])" (click)="backToListClinics()" style="margin-top: 10px; width: 30%;"
+    type="button" class="btn btn-secondary">Back
     to list</button>
 </div>
