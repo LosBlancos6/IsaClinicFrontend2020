@@ -53,7 +53,12 @@ export class PatientComponent implements OnInit {
   }
 
   private extractId(): void {
-    this.id = this.user.id;
+    if (this.isReadOnly) {
+      this.id = this.route.snapshot.params.id;
+    } else {
+      console.log(this.user)
+      this.id = this.user.id;
+    }
   }
 
   private getDetails(): void {
