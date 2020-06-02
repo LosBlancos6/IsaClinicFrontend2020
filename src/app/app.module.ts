@@ -24,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PatientHomePageComponent } from './pages/isa/patient-home-page/patient-home-page.component';
 import { MedicalListByPatientComponent } from './pages/isa/medical-list-by-patient/medical-list-by-patient.component';
 import { CreateDoctorComponent } from './pages/isa/create-doctor/create-doctor.component';
+import { RegistrationRequestsComponent } from './pages/isa/registration-requests/registration-requests.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { CreateDoctorComponent } from './pages/isa/create-doctor/create-doctor.c
     PatientHomePageComponent,
     MedicalListByPatientComponent,
     CreateDoctorComponent,
+    RegistrationRequestsComponent,
   ],
   imports: [
     BrowserModule,
