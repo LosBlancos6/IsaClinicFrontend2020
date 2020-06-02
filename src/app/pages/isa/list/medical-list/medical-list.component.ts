@@ -42,6 +42,14 @@ export class MedicalListComponent implements OnInit {
     this.router.navigateByUrl('/dashboard/create-doctor')
   }
 
+  onDelete(id) {
+    this.medicalService.deleteDoctor(id).subscribe(data => {
+      // console.log(data);
+      alert('Delete Successful!');
+      this.ngOnInit();
+    })
+  }
+
   private setupForm(): FormGroup {
     return this.fb.group({
       firstName: [''],

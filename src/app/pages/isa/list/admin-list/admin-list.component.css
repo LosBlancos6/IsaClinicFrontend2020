@@ -42,3 +42,8 @@ div {
     transform: none;
   }
 }
+
+a:hover {
+   color: #0ae6ff;
+}
+

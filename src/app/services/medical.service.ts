@@ -24,5 +24,9 @@ export class MedicalService {
     return this.http.post(`${this.baseUrl}medicalStaff/${id}`, body)
   }
 
+  public deleteDoctor(id, body = {}): Observable<any> {
+    return this.http.put(`${this.baseUrl}medicalStaff/delete/${id}`, body)
+  }
+
 
 }
