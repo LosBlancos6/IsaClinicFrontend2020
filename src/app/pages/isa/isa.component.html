@@ -25,7 +25,10 @@
           Profile</a></li>
     </ul>
     <ul class="menu">
-      <span *ngIf="checkRole([adminRole, medicalRole])" class="badge badge-secondary" style="width: 50px;">List</span>
+      <span class="badge badge-secondary" style="width: 50px;">List</span>
+      <li *ngIf="checkRole([patientRole])" class="btn btn-light"><a routerLink="/dashboard/choose-clinic">Choose
+          Clinic</a>
+      </li>
       <li *ngIf="checkRole([adminRole])" class="btn btn-light"><a routerLink="/dashboard/admin-list">Admins</a></li>
       <li *ngIf="checkRole([adminRole])" class="btn btn-light"><a
           [routerLink]="['/dashboard/clinic', user.myClinic.id, 'medical']">Medicals</a></li>

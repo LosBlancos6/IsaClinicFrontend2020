@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PatientService } from 'src/app/services/patient.service';
+import { environment } from 'src/environments/environment';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-patient',
@@ -18,7 +20,12 @@ export class PatientComponent implements OnInit {
   private id: string;
   private user: any;
 
-  constructor(private fb: FormBuilder, private route: ActivatedRoute, private patientService: PatientService, private router: Router) {
+  public patientRole = environment.patientRole;
+  public medicalRole = environment.medicalStaffRole;
+  public adminRole = environment.adminRole;
+
+
+  constructor(private fb: FormBuilder, private route: ActivatedRoute, private patientService: PatientService, private router: Router, private authService: AuthService) {
   }
 
   ngOnInit() {
@@ -73,7 +80,16 @@ export class PatientComponent implements OnInit {
     this.ngOnInit();
   }
 
-  backToList() {
+  public checkRole(roles: string[]): boolean {
+    return this.authService.showByRole(roles);
+  }
+
+  backToListClinics() {
     this.router.navigateByUrl(`dashboard/choose-clinic`);
+  }
+
+  backToList() {
+    const clinicId = this.user.myClinic.id;
+    this.router.navigateByUrl(`dashboard/clinic/${clinicId}/patients`);
   }
 }

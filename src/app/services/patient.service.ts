@@ -12,6 +12,10 @@ export class PatientService {
 
   constructor(private http: HttpClient) { }
 
+  public getAllPatients(): Observable<any> {
+    return this.http.get(`${this.baseUrl}patients`);
+  }
+
   public getPatientProfileById(id): Observable<any> {
     return this.http.get(`${this.baseUrl}patients/${id}`);
   }

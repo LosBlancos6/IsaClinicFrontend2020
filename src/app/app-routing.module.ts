@@ -32,7 +32,7 @@ const routes: Routes = [
     path: 'dashboard', component: IsaComponent, children: [
       { path: 'admin-profile/:id', component: AdminComponent },
       { path: 'medical-profile/:id', component: MedicalComponent },
-      { path: 'patient-profile', component: PatientComponent },
+      { path: 'patient-profile/:id', component: PatientComponent },
       { path: 'clinic-profile/:id', component: ClinicComponent },
       { path: 'my-profile', component: MyProfileComponent },
 
