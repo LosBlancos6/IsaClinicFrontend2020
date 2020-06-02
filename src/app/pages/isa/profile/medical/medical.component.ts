@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MedicalService } from 'src/app/services/medical.service';
+import { environment } from 'src/environments/environment';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-medical',
@@ -18,7 +20,11 @@ export class MedicalComponent implements OnInit {
   private id: string;
   private user: any;
 
-  constructor(private route: ActivatedRoute, private medicalService: MedicalService, private fb: FormBuilder, private router: Router) { }
+  public patientRole = environment.patientRole;
+  public medicalRole = environment.medicalStaffRole;
+  public adminRole = environment.adminRole;
+
+  constructor(private route: ActivatedRoute, private medicalService: MedicalService, private fb: FormBuilder, private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
     this.setupUser();
@@ -70,9 +76,18 @@ export class MedicalComponent implements OnInit {
     })
   }
 
+  public checkRole(roles: string[]): boolean {
+    return this.authService.showByRole(roles);
+  }
+
   backToList() {
-    const clinicId = this.user.myClinic.id;
-    this.router.navigateByUrl(`dashboard/clinic/${clinicId}/medical`);
+    if (this.checkRole([this.adminRole])) {
+      const clinicId = this.user.myClinic.id;
+      this.router.navigateByUrl(`dashboard/clinic/${clinicId}/medical`);
+    } else if (this.checkRole([this.medicalRole])) {
+      const clinicId = this.user.myClinic.id;
+      this.router.navigateByUrl(`dashboard/clinic/${clinicId}/patients`);
+    }
   }
 
 }

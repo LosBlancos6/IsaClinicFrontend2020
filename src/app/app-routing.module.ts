@@ -30,7 +30,7 @@ const routes: Routes = [
   },
   {
     path: 'dashboard', component: IsaComponent, children: [
-      { path: 'admin-profile', component: AdminComponent },
+      { path: 'admin-profile/:id', component: AdminComponent },
       { path: 'medical-profile/:id', component: MedicalComponent },
       { path: 'patient-profile', component: PatientComponent },
       { path: 'clinic-profile/:id', component: ClinicComponent },

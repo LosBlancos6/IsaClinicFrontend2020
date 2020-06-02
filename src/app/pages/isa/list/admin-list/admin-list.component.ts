@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from 'src/app/services/admin.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-list',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminListComponent implements OnInit {
 
-  constructor() { }
+  public listOfData = [];
+
+  constructor(private adminService: AdminService, private router: Router) { }
 
   ngOnInit() {
+    this.setupData();
+  }
+
+  private setupData(): void {
+    this.adminService.getAllAdmins().subscribe(data => {
+      console.log(data);
+      this.listOfData = data;
+    })
+  }
+
+  onView(id) {
+    this.router.navigateByUrl(`dashboard/admin-profile/${id}`)
   }
 
 }

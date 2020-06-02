@@ -70,8 +70,12 @@ export class AdminComponent implements OnInit {
   }
 
   backToListClinics() {
-    const clinicId = this.user.myClinic.id;
-    this.router.navigateByUrl(`dashboard/clinic/${clinicId}/medical`);
+    if (!this.isReadOnly) {
+      const clinicId = this.user.myClinic.id;
+      this.router.navigateByUrl(`dashboard/clinic/${clinicId}/medical`);
+    } else {
+      this.router.navigateByUrl(`dashboard/admin-list`);
+    }
   }
 
 }

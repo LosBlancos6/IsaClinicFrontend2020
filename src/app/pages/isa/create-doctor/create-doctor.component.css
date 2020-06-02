@@ -2,6 +2,7 @@ input {
     width: 50%;
     margin-top: 10px;
     margin-bottom: 10px;
+    height: 30px;
 }
 
 div {
@@ -9,7 +10,7 @@ div {
  margin-right: 30%;
  padding: 20px;
  box-shadow: 0 0 2.5em rgba(85,85,85,0.5);
- height: 80vh;
+ height: 90vh;
 }
 
 label {
@@ -17,3 +18,4 @@ label {
    width: 20%;
    font-family: Arial, Helvetica, sans-serif;
 }
+

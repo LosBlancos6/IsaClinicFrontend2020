@@ -16,5 +16,8 @@ export class AdminService {
     return this.http.get(`${this.baseUrl}admins/${id}`);
   }
 
+  public getAllAdmins(): Observable<any> {
+    return this.http.get(`${this.baseUrl}admins`);
+  }
 
 }

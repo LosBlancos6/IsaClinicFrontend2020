@@ -19,6 +19,7 @@ export class ClinicListComponent implements OnInit {
 
   private setupData(): void {
     this.clinicService.getAllClinics().subscribe(data => {
+      console.log(data);
       this.listOfData = data;
     })
   }

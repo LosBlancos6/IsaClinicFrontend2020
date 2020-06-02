@@ -17,3 +17,7 @@ label {
    width: 20%;
    font-family: Arial, Helvetica, sans-serif;
 }
+
+button {
+    opacity: 0.9;
+}
