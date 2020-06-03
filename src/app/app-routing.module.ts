@@ -18,6 +18,7 @@ import { PatientHomePageComponent } from './pages/isa/patient-home-page/patient-
 import { MedicalListByPatientComponent } from './pages/isa/medical-list-by-patient/medical-list-by-patient.component';
 import { CreateDoctorComponent } from './pages/isa/create-doctor/create-doctor.component';
 import { FirstPasswordComponent } from './pages/auth/first-password/first-password.component';
+import { RegistrationRequestsComponent } from './pages/isa/registration-requests/registration-requests.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/auth/login' },
@@ -32,12 +33,15 @@ const routes: Routes = [
   },
   {
     path: 'dashboard', component: IsaComponent, children: [
+
+      //Profili
       { path: 'admin-profile/:id', component: AdminComponent },
       { path: 'medical-profile/:id', component: MedicalComponent },
       { path: 'patient-profile/:id', component: PatientComponent },
       { path: 'clinic-profile/:id', component: ClinicComponent },
       { path: 'my-profile', component: MyProfileComponent },
 
+      //Liste
       { path: 'admin-list', component: AdminListComponent },
       { path: 'clinic/:id/medical', component: MedicalListComponent },
       { path: 'clinic/:id/patients', component: PatientListComponent },
@@ -46,6 +50,8 @@ const routes: Routes = [
       { path: 'choose-clinic', component: PatientHomePageComponent },
       { path: 'medical-list-by-patient/:id', component: MedicalListByPatientComponent },
       { path: 'create-doctor', component: CreateDoctorComponent },
+      { path: 'registration-requests', component: RegistrationRequestsComponent },
+
 
     ]
   },

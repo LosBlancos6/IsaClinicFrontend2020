@@ -25,6 +25,7 @@ import { PatientHomePageComponent } from './pages/isa/patient-home-page/patient-
 import { MedicalListByPatientComponent } from './pages/isa/medical-list-by-patient/medical-list-by-patient.component';
 import { CreateDoctorComponent } from './pages/isa/create-doctor/create-doctor.component';
 import { FirstPasswordComponent } from './pages/auth/first-password/first-password.component';
+import { RegistrationRequestsComponent } from './pages/isa/registration-requests/registration-requests.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { FirstPasswordComponent } from './pages/auth/first-password/first-passwo
     MedicalListByPatientComponent,
     CreateDoctorComponent,
     FirstPasswordComponent,
+    RegistrationRequestsComponent,
   ],
   imports: [
     BrowserModule,
