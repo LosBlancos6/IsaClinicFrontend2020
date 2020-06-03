@@ -21,7 +21,7 @@ export class AuthService {
   }
 
   public setFirstPassword(id: string, body: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}auth/medical/${id}/first-password`, body);
+    return this.http.post(`${this.baseUrl}auth/${id}/first-password`, body);
   }
 
   public showByRole(roles: string[]): boolean {

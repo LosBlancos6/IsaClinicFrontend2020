@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -25,10 +25,19 @@ export class FirstPasswordComponent implements OnInit {
     this.id = this.route.snapshot.params.id;
   }
 
+  confirmationValidator = (control: FormControl): { [s: string]: boolean } => {
+    if (!control.value) {
+      return { required: true };
+    } else if (control.value !== this.validateForm.controls.password.value) {
+      return { confirm: true, error: true };
+    }
+    return {};
+  };
+
   private setupForm(): void {
     this.validateForm = this.fb.group({
-      password: [null, [Validators.required, Validators.minLength(3)]],
-      rePassword: [null, [Validators.required, Validators.minLength(3)]],
+      password: [null, [Validators.required]],
+      rePassword: [null, [Validators.required, this.confirmationValidator]]
     });
   }
 
@@ -36,10 +45,17 @@ export class FirstPasswordComponent implements OnInit {
     this.authService.setFirstPassword(this.id, this.validateForm.value).subscribe(data => {
       const userRaw = localStorage.getItem('user');
       const user = JSON.parse(userRaw);
-      const clinicId = user.myClinic.id;
-      this.router.navigateByUrl(`dashboard/clinic/${clinicId}/patients`)
+      alert('Changed Successful');
+      if (user.userType === 'MEDICAL') {
+        const clinicId = user.myClinic.id;
+        this.router.navigateByUrl(`dashboard/clinic/${clinicId}/patients`)
+      } else {
+        const clinicId = user.myClinic.id;
+        this.router.navigateByUrl(`dashboard/clinic/${clinicId}/medical`);
+      }
     })
   }
+
 
 
 }
