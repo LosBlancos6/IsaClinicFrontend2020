@@ -78,4 +78,12 @@ export class AdminComponent implements OnInit {
     }
   }
 
+  updateAdmin(): void {
+    this.adminService.updateAdmin(this.id, this.validateForm.value).subscribe(data => {
+      console.log(data);
+      alert('Update Successful!');
+      this.ngOnInit();
+    })
+  }
+
 }

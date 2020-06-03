@@ -20,4 +20,8 @@ export class AdminService {
     return this.http.get(`${this.baseUrl}admins`);
   }
 
+  public updateAdmin(id, body): Observable<any> {
+    return this.http.put(`${this.baseUrl}admins/${id}`, body);
+  }
+
 }

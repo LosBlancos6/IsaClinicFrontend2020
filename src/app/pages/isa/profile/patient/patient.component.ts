@@ -79,10 +79,11 @@ export class PatientComponent implements OnInit {
   }
 
   updatePatient(): void {
-    this.patientService.updatePatient(this.id, this.validateForm.value).subscribe(data =>
-      console.log(data));
-    alert('Update Successful!');
-    this.ngOnInit();
+    this.patientService.updatePatient(this.id, this.validateForm.value).subscribe(data => {
+      console.log(data);
+      alert('Update Successful!');
+      this.ngOnInit();
+    })
   }
 
   public checkRole(roles: string[]): boolean {

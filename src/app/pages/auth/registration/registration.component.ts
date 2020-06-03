@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -20,6 +20,15 @@ export class RegistrationComponent implements OnInit {
 
   }
 
+  confirmationValidator = (control: FormControl): { [s: string]: boolean } => {
+    if (!control.value) {
+      return { required: true };
+    } else if (control.value !== this.registerForm.controls.password.value) {
+      return { confirm: true, error: true };
+    }
+    return {};
+  };
+
   private createForm(): FormGroup {
     return this.fb.group({
       firstName: [null, [Validators.required, Validators.minLength(3)]],
@@ -30,7 +39,7 @@ export class RegistrationComponent implements OnInit {
       ssn: [null, [Validators.required, Validators.minLength(3), Validators.pattern("^[0-9]*$")]],
       email: [null, [Validators.required, Validators.email]],
       password: [null, [Validators.required, Validators.minLength(3)]],
-      rePassword: [null, [Validators.required, Validators.minLength(3)]],
+      rePassword: [null, [Validators.required, this.confirmationValidator]],
       phone: [null, [Validators.required, Validators.minLength(3), Validators.pattern("^[0-9]*$")]],
     });
   }

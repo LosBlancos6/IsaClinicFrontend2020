@@ -90,4 +90,13 @@ export class MedicalComponent implements OnInit {
     }
   }
 
+  updateMedical(): void {
+    this.medicalService.updateMedical(this.id, this.validateForm.value).subscribe(data => {
+      console.log(data);
+      alert('Update Successful!');
+      this.ngOnInit();
+    })
+  }
+
+
 }

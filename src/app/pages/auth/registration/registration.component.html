@@ -43,18 +43,17 @@
             <div *ngIf="registerForm.get('email')?.dirty && registerForm.get('email')?.errors" class="text-danger">
                 Please
                 input your email!</div>
-            <input type="text" id="password" class="fadeIn third" name="password" placeholder="Password"
+            <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password"
                 formControlName="password">
             <div *ngIf="registerForm.get('password')?.dirty && registerForm.get('password')?.errors"
                 class="text-danger">
                 Please
                 input minimum 3 characters!</div>
-            <input type="text" id="rePassword" class="fadeIn third" name="rePassword" placeholder="Confirm Password"
+            <input type="password" id="rePassword" class="fadeIn third" name="rePassword" placeholder="Confirm Password"
                 formControlName="rePassword">
             <div *ngIf="registerForm.get('rePassword')?.dirty && registerForm.get('rePassword')?.errors"
                 class="text-danger">
-                Please
-                input minimum 3 characters!</div>
+                Please repeat your password!</div>
             <input type="text" id="phone" class="fadeIn third" name="phone" placeholder="Phone Number"
                 formControlName="phone">
             <div *ngIf="registerForm.get('phone')?.dirty && registerForm.get('phone')?.errors" class="text-danger">
