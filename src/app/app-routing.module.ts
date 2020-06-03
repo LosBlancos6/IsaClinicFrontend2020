@@ -19,6 +19,7 @@ import { MedicalListByPatientComponent } from './pages/isa/medical-list-by-patie
 import { CreateDoctorComponent } from './pages/isa/create-doctor/create-doctor.component';
 import { FirstPasswordComponent } from './pages/auth/first-password/first-password.component';
 import { RegistrationRequestsComponent } from './pages/isa/registration-requests/registration-requests.component';
+import { ChangePasswordComponent } from './pages/isa/change-password/change-password.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/auth/login' },
@@ -51,6 +52,8 @@ const routes: Routes = [
       { path: 'medical-list-by-patient/:id', component: MedicalListByPatientComponent },
       { path: 'create-doctor', component: CreateDoctorComponent },
       { path: 'registration-requests', component: RegistrationRequestsComponent },
+      { path: 'change-password/:id', component: ChangePasswordComponent },
+
 
 
     ]

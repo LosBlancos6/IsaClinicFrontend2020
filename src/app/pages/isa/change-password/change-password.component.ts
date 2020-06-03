@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-first-password',
-  templateUrl: './first-password.component.html',
-  styleUrls: ['./first-password.component.css']
+  selector: 'app-change-password',
+  templateUrl: './change-password.component.html',
+  styleUrls: ['./change-password.component.css']
 })
-export class FirstPasswordComponent implements OnInit {
+export class ChangePasswordComponent implements OnInit {
 
   validateForm: FormGroup;
 
@@ -41,21 +41,24 @@ export class FirstPasswordComponent implements OnInit {
     });
   }
 
-  submitForm(): void {
-    this.authService.setFirstPassword(this.id, this.validateForm.value).subscribe(data => {
+  changePassword(): void {
+    this.authService.changePassword(this.id, this.validateForm.value).subscribe(data => {
+      console.log(data);
+      alert("Password successfully changed!");
       const userRaw = localStorage.getItem('user');
       const user = JSON.parse(userRaw);
-      alert('Changed Successful');
       if (user.userType === 'MEDICAL') {
         const clinicId = user.myClinic.id;
         this.router.navigateByUrl(`dashboard/clinic/${clinicId}/patients`)
-      } else {
-        const clinicId = user.myClinic.id;
-        this.router.navigateByUrl(`dashboard/clinic/${clinicId}/medical`);
+      } else if (user.userType === 'ADMIN') {
+        if (user.adminType === 'CLINIC_ADMIN') {
+          const clinicId = user.myClinic.id;
+          this.router.navigateByUrl(`dashboard/clinic/${clinicId}/medical`)
+        } else {
+          this.router.navigateByUrl(`dashboard/registration-requests`)
+        }
       }
     })
   }
-
-
 
 }

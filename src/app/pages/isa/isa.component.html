@@ -23,6 +23,9 @@
       <span class="badge badge-secondary" style="width: 50px;">Profile</span>
       <li class="btn btn-light"><a routerLink="/dashboard/my-profile">My
           Profile</a></li>
+      <li *ngIf="checkRole([adminRole, medicalRole])" class="btn btn-light"><a
+          [routerLink]="['/dashboard/change-password', user.id]">Change
+          Password</a></li>
     </ul>
     <ul class="menu">
       <span class="badge badge-secondary" style="width: 50px;">List</span>

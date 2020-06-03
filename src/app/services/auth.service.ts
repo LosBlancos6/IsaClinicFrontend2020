@@ -24,6 +24,10 @@ export class AuthService {
     return this.http.post(`${this.baseUrl}auth/${id}/first-password`, body);
   }
 
+  public changePassword(id, body): Observable<any> {
+    return this.http.put(`${this.baseUrl}auth/${id}/change-password`, body);
+  }
+
   public showByRole(roles: string[]): boolean {
     const userRaw = localStorage.getItem('user');
     const user = JSON.parse(userRaw);
