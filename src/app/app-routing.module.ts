@@ -17,6 +17,7 @@ import { ClinicComponent } from './pages/isa/profile/clinic/clinic.component';
 import { PatientHomePageComponent } from './pages/isa/patient-home-page/patient-home-page.component';
 import { MedicalListByPatientComponent } from './pages/isa/medical-list-by-patient/medical-list-by-patient.component';
 import { CreateDoctorComponent } from './pages/isa/create-doctor/create-doctor.component';
+import { FirstPasswordComponent } from './pages/auth/first-password/first-password.component';
 import { RegistrationRequestsComponent } from './pages/isa/registration-requests/registration-requests.component';
 
 const routes: Routes = [
@@ -26,6 +27,7 @@ const routes: Routes = [
       { path: 'login', component: LoginComponent },
       { path: 'registration', component: RegistrationComponent },
       { path: 'not-found', component: NotFoundComponent },
+      { path: 'first-password/:id', component: FirstPasswordComponent }
 
     ]
   },

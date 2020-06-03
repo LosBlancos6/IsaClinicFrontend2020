@@ -32,25 +32,35 @@ export class LoginComponent implements OnInit {
     // console.log(this.loginForm.value);
     this.authService.login(this.loginForm.value).subscribe(data => {
       console.log(data);
+      const token = data.token;
       const user = data.user;
+      localStorage.setItem('token', token);
       localStorage.setItem('user', JSON.stringify(user));
+
       if (user.userType === 'MEDICAL') {
-        // if (user.setNewPassword) {
-        //   const clinicId = user.myClinic.id;
-        //   this.router.navigateByUrl(`dashboard/clinic/${clinicId}/patients`);
-        // } else {
-        const clinicId = user.myClinic.id;
-        this.router.navigateByUrl(`dashboard/clinic/${clinicId}/patients`);
-        // }
+        if (user.setNewPassword) {
+          const id = user.id;
+          this.router.navigateByUrl(`auth/first-password/${id}`);
+        } else {
+          const clinicId = user.myClinic.id;
+          this.router.navigateByUrl(`dashboard/clinic/${clinicId}/patients`);
+        }
+
       } else if (user.userType === 'PATIENT') {
         this.router.navigateByUrl('dashboard/choose-clinic');
+
       } else if (user.userType === 'ADMIN') {
         const adminType = user.adminType;
         if (adminType === 'CLINIC_CENTER_ADMIN') {
           this.router.navigateByUrl('dashboard/registration-requests');
         } else if (adminType === 'CLINIC_ADMIN') {
-          const clinicId = user.myClinic.id;
-          this.router.navigateByUrl(`dashboard/clinic/${clinicId}/medical`);
+          if (user.setNewPassword) {
+            const id = user.id;
+            this.router.navigateByUrl(`auth/first-password/${id}`);
+          } else {
+            const clinicId = user.myClinic.id;
+            this.router.navigateByUrl(`dashboard/clinic/${clinicId}/medical`);
+          }
         }
       }
     }, error => {
