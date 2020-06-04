@@ -29,6 +29,7 @@ import { RegistrationRequestsComponent } from './pages/isa/registration-requests
 import { ChangePasswordComponent } from './pages/isa/change-password/change-password.component';
 import { ExaminationTypeListComponent } from './pages/isa/examination-type/examination-type-list/examination-type-list.component';
 import { EditExaminationTypeComponent } from './pages/isa/examination-type/edit-examination-type/edit-examination-type.component';
+import { CreateExaminationTypeComponent } from './pages/isa/examination-type/create-examination-type/create-examination-type.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { EditExaminationTypeComponent } from './pages/isa/examination-type/edit-
     ChangePasswordComponent,
     ExaminationTypeListComponent,
     EditExaminationTypeComponent,
+    CreateExaminationTypeComponent,
   ],
   imports: [
     BrowserModule,

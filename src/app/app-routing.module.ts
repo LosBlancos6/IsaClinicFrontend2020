@@ -22,6 +22,7 @@ import { RegistrationRequestsComponent } from './pages/isa/registration-requests
 import { ChangePasswordComponent } from './pages/isa/change-password/change-password.component';
 import { ExaminationTypeListComponent } from './pages/isa/examination-type/examination-type-list/examination-type-list.component';
 import { EditExaminationTypeComponent } from './pages/isa/examination-type/edit-examination-type/edit-examination-type.component';
+import { CreateExaminationTypeComponent } from './pages/isa/examination-type/create-examination-type/create-examination-type.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/auth/login' },
@@ -58,6 +59,8 @@ const routes: Routes = [
       { path: 'change-password/:id', component: ChangePasswordComponent },
 
       { path: 'edit-examination-type/:id', component: EditExaminationTypeComponent },
+      { path: 'create-examination-type', component: CreateExaminationTypeComponent },
+
 
 
 

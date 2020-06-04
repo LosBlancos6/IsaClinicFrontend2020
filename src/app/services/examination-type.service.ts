@@ -23,4 +23,8 @@ export class ExaminationTypeService {
   public updateExaminationType(id, body): Observable<any> {
     return this.http.put(`${this.baseUrl}examination-type/${id}`, body);
   }
+
+  public createExaminationType(body): Observable<any> {
+    return this.http.post(`${this.baseUrl}examination-type`, body);
+  }
 }

@@ -71,12 +71,10 @@
       aria-describedby="basic-addon1" formControlName="rePassword">
   </span>
 
-  <button (click)="createDoctor()" [disabled]="!validateForm.valid" style="margin-top: 10px; width: 30%;" type="button"
-    class="btn btn-secondary">Add
-    Doctor</button>
-
-  <button (click)="backToListClinics()" style="margin-top: 10px; width: 30%; margin-left: 20px;" type="button"
+  <button (click)="backToListClinics()" style="margin-top: 10px; width: 30%;" type="button"
     class="btn btn-secondary">Back
     to list</button>
 
+  <button (click)="createDoctor()" [disabled]="!validateForm.valid"
+    style="margin-top: 10px; width: 30%;  margin-left: 20px;" type="button" class="btn btn-secondary">Create</button>
 </div>

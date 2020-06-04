@@ -31,8 +31,8 @@ export class ExaminationTypeListComponent implements OnInit {
     this.router.navigateByUrl(`dashboard/edit-examination-type/${id}`)
   }
 
-  // createExaminationType() {
-  //   this.router.navigateByUrl('dashboard/create-examination-type');
-  // }
+  createExaminationType() {
+    this.router.navigateByUrl('dashboard/create-examination-type');
+  }
 
 }
