@@ -27,7 +27,8 @@ import { CreateDoctorComponent } from './pages/isa/create-doctor/create-doctor.c
 import { FirstPasswordComponent } from './pages/auth/first-password/first-password.component';
 import { RegistrationRequestsComponent } from './pages/isa/registration-requests/registration-requests.component';
 import { ChangePasswordComponent } from './pages/isa/change-password/change-password.component';
-import { ExaminationTypeListComponent } from './pages/isa/list/examination-type-list/examination-type-list.component';
+import { ExaminationTypeListComponent } from './pages/isa/examination-type/examination-type-list/examination-type-list.component';
+import { EditExaminationTypeComponent } from './pages/isa/examination-type/edit-examination-type/edit-examination-type.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { ExaminationTypeListComponent } from './pages/isa/list/examination-type-
     RegistrationRequestsComponent,
     ChangePasswordComponent,
     ExaminationTypeListComponent,
+    EditExaminationTypeComponent,
   ],
   imports: [
     BrowserModule,

@@ -16,4 +16,11 @@ export class ExaminationTypeService {
     return this.http.get(`${this.baseUrl}examination-type`);
   }
 
+  public getExamaminationTypeById(id): Observable<any> {
+    return this.http.get(`${this.baseUrl}examination-type/${id}`);
+  }
+
+  public updateExaminationType(id, body): Observable<any> {
+    return this.http.put(`${this.baseUrl}examination-type/${id}`, body);
+  }
 }
