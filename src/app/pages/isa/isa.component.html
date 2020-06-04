@@ -38,6 +38,8 @@
       <li *ngIf="checkRole([adminRole, medicalRole])" class="btn btn-light"><a
           [routerLink]="['/dashboard/clinic', user.myClinic.id, 'patients']">Patients</a></li>
       <li *ngIf="checkRole([adminRole])" class="btn btn-light"><a routerLink="/dashboard/clinic-list">Clinics</a></li>
+      <li *ngIf="checkRole([adminRole])" class="btn btn-light"><a
+          routerLink="/dashboard//examination-type-list">Examination Types</a></li>
     </ul>
   </ng-sidebar>
 

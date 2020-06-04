@@ -20,6 +20,7 @@ import { CreateDoctorComponent } from './pages/isa/create-doctor/create-doctor.c
 import { FirstPasswordComponent } from './pages/auth/first-password/first-password.component';
 import { RegistrationRequestsComponent } from './pages/isa/registration-requests/registration-requests.component';
 import { ChangePasswordComponent } from './pages/isa/change-password/change-password.component';
+import { ExaminationTypeListComponent } from './pages/isa/list/examination-type-list/examination-type-list.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/auth/login' },
@@ -47,6 +48,7 @@ const routes: Routes = [
       { path: 'clinic/:id/medical', component: MedicalListComponent },
       { path: 'clinic/:id/patients', component: PatientListComponent },
       { path: 'clinic-list', component: ClinicListComponent },
+      { path: 'examination-type-list', component: ExaminationTypeListComponent },
 
       { path: 'choose-clinic', component: PatientHomePageComponent },
       { path: 'medical-list-by-patient/:id', component: MedicalListByPatientComponent },

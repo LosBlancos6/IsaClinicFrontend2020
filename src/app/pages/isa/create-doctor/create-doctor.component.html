@@ -36,6 +36,9 @@
     <input type="text" class="form-control" placeholder="Social Security Number" aria-label="Social Security Number"
       aria-describedby="basic-addon1" formControlName="ssn">
   </span>
+  <span style="margin-left: 20%;" *ngIf="validateForm.get('ssn')?.dirty && validateForm.get('ssn')?.errors"
+    class="text-danger">
+    Please input only numbers(minimum 3)!</span>
 
   <span style="display:flex">
     <label>Email:</label>
@@ -52,6 +55,9 @@
     <input type="text" class="form-control" placeholder="Phone Number" aria-label="Phone Number"
       aria-describedby="basic-addon1" formControlName="phone">
   </span>
+  <span style="margin-left: 20%;" *ngIf="validateForm.get('phone')?.dirty && validateForm.get('phone')?.errors"
+    class="text-danger">
+    Please input only numbers(minimum 3)!</span>
 
   <span style="display:flex">
     <label>Password:</label>

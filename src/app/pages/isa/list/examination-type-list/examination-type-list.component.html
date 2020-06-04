@@ -1,0 +1,20 @@
+<div class="fadeInDown">
+  <h3>Examination Type List</h3>
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of listOfData">
+        <td>{{ data.name }}</td>
+        <td>{{ data.price }}</td>
+        <td>
+          <a (click)="onEdit(data.id)" style="cursor:pointer;">Edit</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

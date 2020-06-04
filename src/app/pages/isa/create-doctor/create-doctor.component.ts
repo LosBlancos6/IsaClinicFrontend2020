@@ -38,11 +38,11 @@ export class CreateDoctorComponent implements OnInit {
       country: [null, [Validators.required]],
       city: [null, [Validators.required]],
       address: [null, [Validators.required]],
-      ssn: [null, [Validators.required]],
+      ssn: [null, [Validators.required, Validators.pattern("^[0-9]*$")]],
       email: [null, [Validators.email, Validators.required]],
       password: [null, [Validators.required]],
       rePassword: [null, [Validators.required, this.confirmationValidator]],
-      phone: [null, [Validators.required]],
+      phone: [null, [Validators.required, Validators.pattern("^[0-9]*$")]],
       // medicalType: [null, [Validators.required]],
     });
   }
