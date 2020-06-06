@@ -30,6 +30,11 @@ import { ChangePasswordComponent } from './pages/isa/change-password/change-pass
 import { ExaminationTypeListComponent } from './pages/isa/examination-type/examination-type-list/examination-type-list.component';
 import { EditExaminationTypeComponent } from './pages/isa/examination-type/edit-examination-type/edit-examination-type.component';
 import { CreateExaminationTypeComponent } from './pages/isa/examination-type/create-examination-type/create-examination-type.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { CreateExaminationAsAdminComponent } from './pages/isa/create-examination-as-admin/create-examination-as-admin.component';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -57,6 +62,7 @@ import { CreateExaminationTypeComponent } from './pages/isa/examination-type/cre
     ExaminationTypeListComponent,
     EditExaminationTypeComponent,
     CreateExaminationTypeComponent,
+    CreateExaminationAsAdminComponent
   ],
   imports: [
     BrowserModule,
@@ -66,6 +72,10 @@ import { CreateExaminationTypeComponent } from './pages/isa/examination-type/cre
     ReactiveFormsModule,
     SidebarModule.forRoot(),
     HttpClientModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

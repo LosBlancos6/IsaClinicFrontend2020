@@ -26,6 +26,9 @@
       <li *ngIf="checkRole([adminRole, medicalRole])" class="btn btn-light"><a
           [routerLink]="['/dashboard/change-password', user.id]">Change
           Password</a></li>
+      <li *ngIf="checkRole([adminRole]) && user.adminType=='CLINIC_ADMIN'" class="btn btn-light">
+        <a routerLink="/dashboard/create-examination-as-admin">Create Examination</a>
+      </li>
     </ul>
     <ul class="menu">
       <span class="badge badge-secondary" style="width: 50px;">List</span>
