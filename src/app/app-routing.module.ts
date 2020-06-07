@@ -23,7 +23,9 @@ import { ChangePasswordComponent } from './pages/isa/change-password/change-pass
 import { ExaminationTypeListComponent } from './pages/isa/examination-type/examination-type-list/examination-type-list.component';
 import { EditExaminationTypeComponent } from './pages/isa/examination-type/edit-examination-type/edit-examination-type.component';
 import { CreateExaminationTypeComponent } from './pages/isa/examination-type/create-examination-type/create-examination-type.component';
-import { CreateExaminationAsAdminComponent } from './pages/isa/create-examination-as-admin/create-examination-as-admin.component';
+import { CreateExaminationAsAdminComponent } from './pages/isa/examination-request-predefined/create-examination-as-admin/create-examination-as-admin.component';
+import { ExaminationRequestListDoctorComponent } from './pages/isa/examination-request-predefined/examination-request-list-doctor/examination-request-list-doctor.component';
+import { ViewExaminationPredefinedComponent } from './pages/isa/examination-request-predefined/view-examination-predefined/view-examination-predefined.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/auth/login' },
@@ -61,7 +63,9 @@ const routes: Routes = [
 
       { path: 'edit-examination-type/:id', component: EditExaminationTypeComponent },
       { path: 'create-examination-type', component: CreateExaminationTypeComponent },
-      { path: 'create-examination-as-admin', component: CreateExaminationAsAdminComponent }
+      { path: 'create-examination-as-admin', component: CreateExaminationAsAdminComponent },
+      { path: 'examination-request-list-doctor/:id', component: ExaminationRequestListDoctorComponent },
+      { path: 'view-examination-predefined/:doctorId/:examinationId', component: ViewExaminationPredefinedComponent },
 
 
 

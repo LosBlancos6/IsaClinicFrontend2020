@@ -46,4 +46,8 @@ export class MedicalListByPatientComponent implements OnInit {
     this.router.navigateByUrl(`dashboard/choose-clinic`);
   }
 
+  onView(doctorId) {
+    console.log(doctorId)
+    this.router.navigateByUrl(`dashboard/examination-request-list-doctor/${doctorId}`)
+  }
 }

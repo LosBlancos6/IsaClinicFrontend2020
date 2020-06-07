@@ -1,0 +1,59 @@
+<div [formGroup]="validateForm">
+  <h3>Booking Examination</h3>
+
+  <span style="display:flex">
+    <label>Examination Date:</label>
+    <input type="text" class="form-control" placeholder="examinationDate" aria-label="examinationDate"
+      aria-describedby="basic-addon1" formControlName="examinationDate">
+  </span>
+
+  <span style="display:flex">
+    <label>Start At:</label>
+    <input type="text" class="form-control" placeholder="startAt" aria-label="startAt" aria-describedby="basic-addon1"
+      formControlName="startAt">
+  </span>
+
+  <!-- <span style="display:flex">
+    <label>Clinic Name:</label>
+    <input type="text" class="form-control" placeholder="clinicName" aria-label="clinicName"
+      aria-describedby="basic-addon1" formControlName="clinicName">
+  </span> -->
+
+  <span style="display:flex">
+    <label>Your Name:</label>
+    <input type="text" class="form-control" placeholder="patientName" aria-label="patientName"
+      aria-describedby="basic-addon1" formControlName="patientName">
+  </span>
+
+  <!-- <span style="display:flex">
+    <label>Doctor Name:</label>
+    <input type="text" class="form-control" placeholder="doctorName" aria-label="doctorName"
+      aria-describedby="basic-addon1" formControlName="doctorName">
+  </span> -->
+
+  <!-- <span style="display:flex">
+    <label>Examination Type:</label>
+    <input type="text" class="form-control" placeholder="examinationTypeId" aria-label="examinationTypeId"
+      aria-describedby="basic-addon1" formControlName="examinationTypeId">
+  </span> -->
+
+  <span style="display:flex">
+    <label>Examination Type:</label>
+    <input type="text" class="form-control" placeholder="examinationTypeName" aria-label="examinationTypeName"
+      aria-describedby="basic-addon1" formControlName="examinationTypeName">
+  </span>
+
+  <!-- <span style="display:flex">
+    <label>Price:</label>
+    <input type="text" class="form-control" placeholder="examinationTypePrice" aria-label="examinationTypePrice"
+      aria-describedby="basic-addon1" formControlName="examinationTypePrice">
+  </span> -->
+
+  <button (click)="bookingExamination()" style="margin-top: 10px; width: 30%;" type="button"
+    class="btn btn-secondary">Booking</button>
+
+  <button (click)="cancel()" style="margin-top: 10px; width: 30%; margin-left: 20px;" type="button"
+    class="btn btn-secondary">Cancel </button>
+
+
+</div>

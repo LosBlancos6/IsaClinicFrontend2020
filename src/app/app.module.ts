@@ -32,9 +32,12 @@ import { EditExaminationTypeComponent } from './pages/isa/examination-type/edit-
 import { CreateExaminationTypeComponent } from './pages/isa/examination-type/create-examination-type/create-examination-type.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { CreateExaminationAsAdminComponent } from './pages/isa/create-examination-as-admin/create-examination-as-admin.component';
+import { CreateExaminationAsAdminComponent } from './pages/isa/examination-request-predefined/create-examination-as-admin/create-examination-as-admin.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material';
+import { ExaminationRequestListDoctorComponent } from './pages/isa/examination-request-predefined/examination-request-list-doctor/examination-request-list-doctor.component';
+import { ViewExaminationPredefinedComponent } from './pages/isa/examination-request-predefined/view-examination-predefined/view-examination-predefined.component';
+
 
 @NgModule({
   declarations: [
@@ -62,7 +65,9 @@ import { MatInputModule } from '@angular/material';
     ExaminationTypeListComponent,
     EditExaminationTypeComponent,
     CreateExaminationTypeComponent,
-    CreateExaminationAsAdminComponent
+    CreateExaminationAsAdminComponent,
+    ExaminationRequestListDoctorComponent,
+    ViewExaminationPredefinedComponent
   ],
   imports: [
     BrowserModule,
