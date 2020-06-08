@@ -28,6 +28,9 @@ import { ExaminationRequestListDoctorComponent } from './pages/isa/examination-r
 import { ViewExaminationPredefinedComponent } from './pages/isa/examination-request-predefined/view-examination-predefined/view-examination-predefined.component';
 import { HealthRecordComponent } from './pages/isa/review/health-record/health-record.component';
 import { ReviewDoctorComponent } from './pages/isa/review/review-doctor/review-doctor.component';
+import { OperationRoomListComponent } from './pages/isa/operation-room/operation-room-list/operation-room-list.component';
+import { EditOperationRoomComponent } from './pages/isa/operation-room/edit-operation-room/edit-operation-room.component';
+import { CreateOperationRoomComponent } from './pages/isa/operation-room/create-operation-room/create-operation-room.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/auth/login' },
@@ -56,6 +59,7 @@ const routes: Routes = [
       { path: 'clinic/:id/patients', component: PatientListComponent },
       { path: 'clinic-list', component: ClinicListComponent },
       { path: 'examination-type-list', component: ExaminationTypeListComponent },
+      { path: 'operation-room-list', component: OperationRoomListComponent },
 
       //Patient
       { path: 'choose-clinic', component: PatientHomePageComponent },
@@ -76,6 +80,10 @@ const routes: Routes = [
       { path: 'create-examination-as-admin', component: CreateExaminationAsAdminComponent },
       { path: 'examination-request-list-doctor/:id', component: ExaminationRequestListDoctorComponent },
       { path: 'view-examination-predefined/:doctorId/:examinationId', component: ViewExaminationPredefinedComponent },
+
+      //OperationRoom
+      { path: 'edit-operation-room/:id', component: EditOperationRoomComponent },
+      { path: 'create-operation-room', component: CreateOperationRoomComponent },
 
     ]
   },

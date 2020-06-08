@@ -46,6 +46,9 @@
       <li *ngIf="checkRole([adminRole])" class="btn btn-light"><a routerLink="/dashboard/clinic-list">Clinics</a></li>
       <li *ngIf="checkRole([adminRole])" class="btn btn-light"><a
           routerLink="/dashboard//examination-type-list">Examination Types</a></li>
+      <li *ngIf="checkRole([adminRole])" class="btn btn-light">
+        <a routerLink="/dashboard/operation-room-list">Operation Rooms</a>
+      </li>
     </ul>
   </ng-sidebar>
 

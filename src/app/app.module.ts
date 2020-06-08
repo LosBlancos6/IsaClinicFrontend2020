@@ -39,6 +39,9 @@ import { ExaminationRequestListDoctorComponent } from './pages/isa/examination-r
 import { ViewExaminationPredefinedComponent } from './pages/isa/examination-request-predefined/view-examination-predefined/view-examination-predefined.component';
 import { HealthRecordComponent } from './pages/isa/review/health-record/health-record.component';
 import { ReviewDoctorComponent } from './pages/isa/review/review-doctor/review-doctor.component';
+import { OperationRoomListComponent } from './pages/isa/operation-room/operation-room-list/operation-room-list.component';
+import { EditOperationRoomComponent } from './pages/isa/operation-room/edit-operation-room/edit-operation-room.component';
+import { CreateOperationRoomComponent } from './pages/isa/operation-room/create-operation-room/create-operation-room.component';
 
 
 @NgModule({
@@ -71,7 +74,10 @@ import { ReviewDoctorComponent } from './pages/isa/review/review-doctor/review-d
     ExaminationRequestListDoctorComponent,
     ViewExaminationPredefinedComponent,
     HealthRecordComponent,
-    ReviewDoctorComponent
+    ReviewDoctorComponent,
+    OperationRoomListComponent,
+    EditOperationRoomComponent,
+    CreateOperationRoomComponent
   ],
   imports: [
     BrowserModule,
