@@ -26,6 +26,8 @@ import { CreateExaminationTypeComponent } from './pages/isa/examination-type/cre
 import { CreateExaminationAsAdminComponent } from './pages/isa/examination-request-predefined/create-examination-as-admin/create-examination-as-admin.component';
 import { ExaminationRequestListDoctorComponent } from './pages/isa/examination-request-predefined/examination-request-list-doctor/examination-request-list-doctor.component';
 import { ViewExaminationPredefinedComponent } from './pages/isa/examination-request-predefined/view-examination-predefined/view-examination-predefined.component';
+import { HealthRecordComponent } from './pages/isa/review/health-record/health-record.component';
+import { ReviewDoctorComponent } from './pages/isa/review/review-doctor/review-doctor.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/auth/login' },
@@ -41,35 +43,39 @@ const routes: Routes = [
   {
     path: 'dashboard', component: IsaComponent, children: [
 
-      //Profili
+      //Profiles
       { path: 'admin-profile/:id', component: AdminComponent },
       { path: 'medical-profile/:id', component: MedicalComponent },
       { path: 'patient-profile/:id', component: PatientComponent },
       { path: 'clinic-profile/:id', component: ClinicComponent },
       { path: 'my-profile', component: MyProfileComponent },
 
-      //Liste
+      //Lists
       { path: 'admin-list', component: AdminListComponent },
       { path: 'clinic/:id/medical', component: MedicalListComponent },
       { path: 'clinic/:id/patients', component: PatientListComponent },
       { path: 'clinic-list', component: ClinicListComponent },
       { path: 'examination-type-list', component: ExaminationTypeListComponent },
 
+      //Patient
       { path: 'choose-clinic', component: PatientHomePageComponent },
       { path: 'medical-list-by-patient/:id', component: MedicalListByPatientComponent },
+      { path: 'health-record', component: HealthRecordComponent },
+      { path: 'review-doctor/:id', component: ReviewDoctorComponent },
+
+      //Admin
       { path: 'create-doctor', component: CreateDoctorComponent },
       { path: 'registration-requests', component: RegistrationRequestsComponent },
       { path: 'change-password/:id', component: ChangePasswordComponent },
 
+      //ExaminationType
       { path: 'edit-examination-type/:id', component: EditExaminationTypeComponent },
       { path: 'create-examination-type', component: CreateExaminationTypeComponent },
+
+      //ExaminationPredefined
       { path: 'create-examination-as-admin', component: CreateExaminationAsAdminComponent },
       { path: 'examination-request-list-doctor/:id', component: ExaminationRequestListDoctorComponent },
       { path: 'view-examination-predefined/:doctorId/:examinationId', component: ViewExaminationPredefinedComponent },
-
-
-
-
 
     ]
   },

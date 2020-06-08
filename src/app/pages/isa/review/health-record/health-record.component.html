@@ -1,0 +1,22 @@
+<div class="fadeInDown">
+  <h3>Health Record</h3>
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of listOfData">
+        <td>{{ data.examinationTypeName }}</td>
+        <td>{{ data.examinationDate }}</td>
+        <td>{{ data.startAt }}</td>
+        <td>
+          <a (click)="onAssess(data.id)" style=" cursor:pointer;">Rate</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

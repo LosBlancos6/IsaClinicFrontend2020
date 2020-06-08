@@ -1,0 +1,13 @@
+<div id="one" [formGroup]="validateForm">
+  <h3>Rate The Doctor</h3> <br>
+
+  <input type="text" class="form-control" placeholder="Assessment(1-5)" aria-label="assessment"
+    aria-describedby="basic-addon1" formControlName="assessment">
+  <div id="validate" *ngIf="validateForm.get('assessment')?.dirty && validateForm.get('assessment')?.errors"
+    class="text-danger">Please input number between 1 and 5</div>
+
+  <textarea name="message" placeholder="Description..." formControlName="description"></textarea> <br>
+
+  <button (click)="rate()" [disabled]="!validateForm.valid" style="margin-top: 10px; width: 30%;" type="button"
+    class="btn btn-secondary">Rate</button>
+</div>

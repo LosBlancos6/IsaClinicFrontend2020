@@ -37,6 +37,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material';
 import { ExaminationRequestListDoctorComponent } from './pages/isa/examination-request-predefined/examination-request-list-doctor/examination-request-list-doctor.component';
 import { ViewExaminationPredefinedComponent } from './pages/isa/examination-request-predefined/view-examination-predefined/view-examination-predefined.component';
+import { HealthRecordComponent } from './pages/isa/review/health-record/health-record.component';
+import { ReviewDoctorComponent } from './pages/isa/review/review-doctor/review-doctor.component';
 
 
 @NgModule({
@@ -67,7 +69,9 @@ import { ViewExaminationPredefinedComponent } from './pages/isa/examination-requ
     CreateExaminationTypeComponent,
     CreateExaminationAsAdminComponent,
     ExaminationRequestListDoctorComponent,
-    ViewExaminationPredefinedComponent
+    ViewExaminationPredefinedComponent,
+    HealthRecordComponent,
+    ReviewDoctorComponent
   ],
   imports: [
     BrowserModule,
