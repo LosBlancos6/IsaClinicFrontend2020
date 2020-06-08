@@ -27,4 +27,8 @@ export class ExaminationTypeService {
   public createExaminationType(body): Observable<any> {
     return this.http.post(`${this.baseUrl}examination-type`, body);
   }
+
+  public deleteExaminationType(id, body = {}): Observable<any> {
+    return this.http.put(`${this.baseUrl}examination-type/delete/${id}`, body);
+  }
 }

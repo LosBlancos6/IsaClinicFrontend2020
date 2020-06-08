@@ -35,4 +35,12 @@ export class ExaminationTypeListComponent implements OnInit {
     this.router.navigateByUrl('dashboard/create-examination-type');
   }
 
+
+  onDelete(id) {
+    this.examinationTypeService.deleteExaminationType(id).subscribe(data => {
+      // console.log(data);
+      alert('Delete Successful!');
+      this.ngOnInit();
+    })
+  }
 }

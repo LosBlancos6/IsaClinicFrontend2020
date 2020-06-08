@@ -38,8 +38,12 @@ export class MedicalListByPatientComponent implements OnInit {
       firstName: [''],
       lastName: [''],
       email: [''],
-      examinationType: ['']
+      // examinationType: ['']
     });
+  }
+
+  onSearch() {
+    console.log(this.form.value);
   }
 
   backToList() {
