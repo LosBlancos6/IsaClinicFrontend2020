@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ReviewService } from 'src/app/services/review.service';
 
 @Component({
   selector: 'app-review-doctor',
@@ -13,7 +14,7 @@ export class ReviewDoctorComponent implements OnInit {
 
   private id: string;
 
-  constructor(private fb: FormBuilder, private route: ActivatedRoute) { }
+  constructor(private fb: FormBuilder, private route: ActivatedRoute, private reviewService: ReviewService, private router: Router) { }
 
   ngOnInit(): void {
     this.extractId();
@@ -37,9 +38,19 @@ export class ReviewDoctorComponent implements OnInit {
     const Object = {
       review: this.validateForm.value.assessment,
       description: this.validateForm.value.description,
-      patientId: user.id
+      patientId: user.id,
+      medicalStaffId: this.id
     }
     console.log(Object);
+
+    this.reviewService.reviewDoctor(Object).subscribe(data => {
+      console.log(data);
+      alert('assessment successful');
+      this.router.navigateByUrl('dashboard/choose-clinic');
+    });
   }
 
+  back() {
+    this.router.navigateByUrl('dashboard/health-record');
+  }
 }

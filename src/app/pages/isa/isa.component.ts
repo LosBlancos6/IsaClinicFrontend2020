@@ -31,6 +31,7 @@ export class IsaComponent implements OnInit {
   onLogout() {
     this.router.navigateByUrl('auth/login');
     localStorage.removeItem('user');
+    localStorage.removeItem('test');
   }
 
   public checkRole(roles: string[]): boolean {
