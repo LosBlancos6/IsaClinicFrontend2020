@@ -31,17 +31,17 @@ export class ClinicListComponent implements OnInit {
     })
   }
 
-  onView(id) {
-    this.router.navigateByUrl(`dashboard/clinic-profile/${id}`)
-  }
-
   // onView(id) {
-  //   const clinicId = this.user.myClinic.id;
-  //   if (id == clinicId) {
-  //     console.log('Isti');
-  //   } else {
-  //     this.router.navigateByUrl(`dashboard/clinic-profile/${id}`)
-  //   }
+  //   this.router.navigateByUrl(`dashboard/clinic-profile/${id}`)
   // }
+
+  onView(id) {
+    const clinicId = this.user.myClinic.id;
+    if (id == clinicId) {
+      this.router.navigateByUrl(`dashboard/edit-clinic-profile/${id}`)
+    } else {
+      this.router.navigateByUrl(`dashboard/clinic-profile/${id}`)
+    }
+  }
 
 }

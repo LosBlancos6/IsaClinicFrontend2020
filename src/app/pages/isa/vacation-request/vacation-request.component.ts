@@ -12,8 +12,8 @@ export class VacationRequestComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.range);
-    console.log(this.provera());
+    // console.log(this.range);
+    // console.log(this.provera());
   }
 
   onSchedule() {

@@ -32,6 +32,7 @@ import { OperationRoomListComponent } from './pages/isa/operation-room/operation
 import { EditOperationRoomComponent } from './pages/isa/operation-room/edit-operation-room/edit-operation-room.component';
 import { CreateOperationRoomComponent } from './pages/isa/operation-room/create-operation-room/create-operation-room.component';
 import { VacationRequestComponent } from './pages/isa/vacation-request/vacation-request.component';
+import { EditClinicProfileComponent } from './pages/isa/edit-clinic-profile/edit-clinic-profile.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/auth/login' },
@@ -72,6 +73,7 @@ const routes: Routes = [
       { path: 'create-doctor', component: CreateDoctorComponent },
       { path: 'registration-requests', component: RegistrationRequestsComponent },
       { path: 'change-password/:id', component: ChangePasswordComponent },
+      { path: 'edit-clinic-profile/:id', component: EditClinicProfileComponent },
 
       //Doctor
       { path: 'vacation-request', component: VacationRequestComponent },

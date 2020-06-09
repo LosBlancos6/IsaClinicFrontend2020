@@ -47,6 +47,7 @@ import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
 import { IntlModule } from '@progress/kendo-angular-intl';
 import { LabelModule } from '@progress/kendo-angular-label';
 import { InputsModule } from '@progress/kendo-angular-inputs';
+import { EditClinicProfileComponent } from './pages/isa/edit-clinic-profile/edit-clinic-profile.component';
 
 @NgModule({
   declarations: [
@@ -82,7 +83,8 @@ import { InputsModule } from '@progress/kendo-angular-inputs';
     OperationRoomListComponent,
     EditOperationRoomComponent,
     CreateOperationRoomComponent,
-    VacationRequestComponent
+    VacationRequestComponent,
+    EditClinicProfileComponent
   ],
   imports: [
     BrowserModule,
