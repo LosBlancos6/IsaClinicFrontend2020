@@ -1,0 +1,20 @@
+<div id="one">
+  <h3>Schedule a Vacation</h3> <br>
+
+  <kendo-daterange>
+    <label>
+      <span class="label">Start</span>
+      <kendo-dateinput kendoDateRangeStartInput [(value)]="range.start"></kendo-dateinput>
+    </label>
+    <label>
+      <span class="label">End</span>
+      <kendo-dateinput kendoDateRangeEndInput [(value)]="range.end"></kendo-dateinput>
+    </label>
+  </kendo-daterange>
+
+  <br>
+
+  <button (click)="onSchedule()" [disabled]="!provera()" style="margin-top: 10px; width: 30%;" type="button"
+    class="btn btn-secondary">Schedule</button>
+
+</div>

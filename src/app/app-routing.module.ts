@@ -31,6 +31,7 @@ import { ReviewDoctorComponent } from './pages/isa/review/review-doctor/review-d
 import { OperationRoomListComponent } from './pages/isa/operation-room/operation-room-list/operation-room-list.component';
 import { EditOperationRoomComponent } from './pages/isa/operation-room/edit-operation-room/edit-operation-room.component';
 import { CreateOperationRoomComponent } from './pages/isa/operation-room/create-operation-room/create-operation-room.component';
+import { VacationRequestComponent } from './pages/isa/vacation-request/vacation-request.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/auth/login' },
@@ -71,6 +72,9 @@ const routes: Routes = [
       { path: 'create-doctor', component: CreateDoctorComponent },
       { path: 'registration-requests', component: RegistrationRequestsComponent },
       { path: 'change-password/:id', component: ChangePasswordComponent },
+
+      //Doctor
+      { path: 'vacation-request', component: VacationRequestComponent },
 
       //ExaminationType
       { path: 'edit-examination-type/:id', component: EditExaminationTypeComponent },

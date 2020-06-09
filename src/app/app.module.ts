@@ -42,7 +42,11 @@ import { ReviewDoctorComponent } from './pages/isa/review/review-doctor/review-d
 import { OperationRoomListComponent } from './pages/isa/operation-room/operation-room-list/operation-room-list.component';
 import { EditOperationRoomComponent } from './pages/isa/operation-room/edit-operation-room/edit-operation-room.component';
 import { CreateOperationRoomComponent } from './pages/isa/operation-room/create-operation-room/create-operation-room.component';
-
+import { VacationRequestComponent } from './pages/isa/vacation-request/vacation-request.component';
+import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
+import { IntlModule } from '@progress/kendo-angular-intl';
+import { LabelModule } from '@progress/kendo-angular-label';
+import { InputsModule } from '@progress/kendo-angular-inputs';
 
 @NgModule({
   declarations: [
@@ -77,7 +81,8 @@ import { CreateOperationRoomComponent } from './pages/isa/operation-room/create-
     ReviewDoctorComponent,
     OperationRoomListComponent,
     EditOperationRoomComponent,
-    CreateOperationRoomComponent
+    CreateOperationRoomComponent,
+    VacationRequestComponent
   ],
   imports: [
     BrowserModule,
@@ -90,7 +95,11 @@ import { CreateOperationRoomComponent } from './pages/isa/operation-room/create-
     MatDatepickerModule,
     MatFormFieldModule,
     MatNativeDateModule,
-    MatInputModule
+    MatInputModule,
+    IntlModule,
+    DateInputsModule,
+    LabelModule,
+    InputsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

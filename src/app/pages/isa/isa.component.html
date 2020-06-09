@@ -32,6 +32,9 @@
       <li *ngIf="checkRole([patientRole])" class="btn btn-light">
         <a routerLink="/dashboard/health-record">Health Record</a>
       </li>
+      <li *ngIf="checkRole([medicalRole])" class="btn btn-light">
+        <a routerLink="/dashboard/vacation-request">Schedule Vacation</a>
+      </li>
     </ul>
     <ul class="menu">
       <span class="badge badge-secondary" style="width: 50px;">List</span>
