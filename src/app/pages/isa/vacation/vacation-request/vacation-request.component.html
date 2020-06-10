@@ -14,7 +14,11 @@
 
   <br>
 
-  <button (click)="onSchedule()" [disabled]="!provera()" style="margin-top: 10px; width: 30%;" type="button"
-    class="btn btn-secondary">Schedule</button>
+  <div [formGroup]="validateForm">
+    <textarea name="message" placeholder="Description..." formControlName="description"></textarea>
+  </div>
+
+  <button (click)="onSchedule()" [disabled]="!(provera() && validateForm.valid)" style="margin-top: 10px; width: 30%;"
+    type="button" class="btn btn-secondary">Send Request</button>
 
 </div>

@@ -42,12 +42,13 @@ import { ReviewDoctorComponent } from './pages/isa/review/review-doctor/review-d
 import { OperationRoomListComponent } from './pages/isa/operation-room/operation-room-list/operation-room-list.component';
 import { EditOperationRoomComponent } from './pages/isa/operation-room/edit-operation-room/edit-operation-room.component';
 import { CreateOperationRoomComponent } from './pages/isa/operation-room/create-operation-room/create-operation-room.component';
-import { VacationRequestComponent } from './pages/isa/vacation-request/vacation-request.component';
+import { VacationRequestComponent } from './pages/isa/vacation/vacation-request/vacation-request.component';
 import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
 import { IntlModule } from '@progress/kendo-angular-intl';
 import { LabelModule } from '@progress/kendo-angular-label';
 import { InputsModule } from '@progress/kendo-angular-inputs';
 import { EditClinicProfileComponent } from './pages/isa/edit-clinic-profile/edit-clinic-profile.component';
+import { VacationRequestListComponent } from './pages/isa/vacation/vacation-request-list/vacation-request-list.component';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,8 @@ import { EditClinicProfileComponent } from './pages/isa/edit-clinic-profile/edit
     EditOperationRoomComponent,
     CreateOperationRoomComponent,
     VacationRequestComponent,
-    EditClinicProfileComponent
+    EditClinicProfileComponent,
+    VacationRequestListComponent
   ],
   imports: [
     BrowserModule,

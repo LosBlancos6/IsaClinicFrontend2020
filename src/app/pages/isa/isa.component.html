@@ -35,8 +35,14 @@
       <li *ngIf="checkRole([medicalRole])" class="btn btn-light">
         <a routerLink="/dashboard/vacation-request">Schedule Vacation</a>
       </li>
-    </ul>
-    <ul class="menu">
+      <li *ngIf="checkRole([adminRole]) && user.adminType=='CLINIC_CENTER_ADMIN'" class="btn btn-light">
+        <a routerLink="/dashboard/registration-requests">Registration Requests</a>
+      </li>
+      <li *ngIf="checkRole([adminRole]) && user.adminType=='CLINIC_ADMIN'" class="btn btn-light">
+        <a routerLink="/dashboard/vacation-request-list">Vacation Requests</a>
+      </li>
+
+
       <span class="badge badge-secondary" style="width: 50px;">List</span>
       <li *ngIf="checkRole([patientRole])" class="btn btn-light"><a routerLink="/dashboard/choose-clinic">Choose
           Clinic</a>

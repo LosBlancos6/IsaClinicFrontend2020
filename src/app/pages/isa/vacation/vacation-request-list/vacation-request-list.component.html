@@ -1,0 +1,27 @@
+<div class="fadeInDown">
+  <h3>Vacation Request List</h3>
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th>Doctor Id</th>
+        <th>Start At</th>
+        <th>End At</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of listOfData">
+        <td>{{ data.medicalStaffId }}</td>
+        <td>{{ data.startAt }}</td>
+        <td>{{ data.endAt }}</td>
+        <td>{{ data.description }}</td>
+        <td>
+          <a (click)="approveRequest(data.id)" style=" cursor:pointer;">Approve</a>
+        </td>
+        <td>
+          <a (click)="declineRequest(data.id)" style=" cursor:pointer;">Decline</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
