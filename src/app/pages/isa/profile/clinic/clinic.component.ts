@@ -82,4 +82,9 @@ export class ClinicComponent implements OnInit {
     return this.authService.showByRole(roles);
   }
 
+  viewOnMap(): void {
+    const id = this.route.snapshot.params.id;
+    this.router.navigateByUrl(`dashboard/clinic-location/${id}`);
+  }
+
 }

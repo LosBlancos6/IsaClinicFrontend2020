@@ -9,8 +9,11 @@
 
   <span style="display:flex">
     <label>Address:</label>
-    <input type="text" class="form-control" placeholder="Address" aria-label="Address" aria-describedby="basic-addon1"
-      formControlName="address">
+    <input style="width: 25%;" type="text" class="form-control" placeholder="Address" aria-label="Address"
+      aria-describedby="basic-addon1" formControlName="address">
+    <button (click)="viewOnMap()" class="btn btn-primary"
+      style="width:25%; height:40px; margin-top: 8px; opacity: 0.9;">View on
+      Map</button>
   </span>
 
   <span style="display:flex">

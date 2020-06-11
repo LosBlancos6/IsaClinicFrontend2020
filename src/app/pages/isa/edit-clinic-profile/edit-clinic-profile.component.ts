@@ -90,4 +90,8 @@ export class EditClinicProfileComponent implements OnInit {
     // })
   }
 
+  viewOnMap(): void {
+    const id = this.route.snapshot.params.id;
+    this.router.navigateByUrl(`dashboard/clinic-location/${id}`);
+  }
 }

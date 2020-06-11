@@ -49,6 +49,13 @@ import { LabelModule } from '@progress/kendo-angular-label';
 import { InputsModule } from '@progress/kendo-angular-inputs';
 import { EditClinicProfileComponent } from './pages/isa/edit-clinic-profile/edit-clinic-profile.component';
 import { VacationRequestListComponent } from './pages/isa/vacation/vacation-request-list/vacation-request-list.component';
+import { AngularYandexMapsModule, IConfig } from 'angular8-yandex-maps';
+import { ClinicLocationComponent } from './pages/isa/clinic-location/clinic-location.component';
+
+const mapConfig: IConfig = {
+  apiKey: '658f67a2-fd77-42e9-b99e-2bd48c4ccad4',
+  lang: 'en_US',
+};
 
 @NgModule({
   declarations: [
@@ -86,7 +93,8 @@ import { VacationRequestListComponent } from './pages/isa/vacation/vacation-requ
     CreateOperationRoomComponent,
     VacationRequestComponent,
     EditClinicProfileComponent,
-    VacationRequestListComponent
+    VacationRequestListComponent,
+    ClinicLocationComponent
   ],
   imports: [
     BrowserModule,
@@ -103,7 +111,8 @@ import { VacationRequestListComponent } from './pages/isa/vacation/vacation-requ
     IntlModule,
     DateInputsModule,
     LabelModule,
-    InputsModule
+    InputsModule,
+    AngularYandexMapsModule.forRoot(mapConfig),
   ],
   providers: [],
   bootstrap: [AppComponent]
