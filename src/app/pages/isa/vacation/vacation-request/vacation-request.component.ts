@@ -39,7 +39,7 @@ export class VacationRequestComponent implements OnInit {
       medicalStaffId: user.id
     }
 
-    // console.log(Object);
+    console.log(Object);
     this.vacationRequestService.createVacationRequest(Object).subscribe(data => {
       console.log(data);
       alert('request sent successfully');

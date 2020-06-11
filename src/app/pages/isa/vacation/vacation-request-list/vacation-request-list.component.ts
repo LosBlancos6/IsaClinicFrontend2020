@@ -18,7 +18,9 @@ export class VacationRequestListComponent implements OnInit {
   }
 
   private setupData(): void {
-    this.vacationRequestService.getAllVacationRequests().subscribe(data => {
+    const user = JSON.parse(localStorage.getItem('user'));
+    const id = user.myClinic.id;
+    this.vacationRequestService.getAllVacationRequestsByClinic(id).subscribe(data => {
       console.log(data);
       this.listOfData = data;
     })

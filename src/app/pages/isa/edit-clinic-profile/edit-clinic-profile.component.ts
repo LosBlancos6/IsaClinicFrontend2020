@@ -83,11 +83,11 @@ export class EditClinicProfileComponent implements OnInit {
 
   updateClinic(): void {
     console.log(this.validateForm.value);
-    // this.adminService.updateAdmin(this.id, this.validateForm.value).subscribe(data => {
-    //   console.log(data);
-    //   alert('Update Successful!');
-    //   this.ngOnInit();
-    // })
+    this.clinicService.updateClinic(this.id, this.validateForm.value).subscribe(data => {
+      console.log(data);
+      alert('Update Successful!');
+      this.ngOnInit();
+    })
   }
 
   viewOnMap(): void {

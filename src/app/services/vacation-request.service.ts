@@ -20,4 +20,8 @@ export class VacationRequestService {
     return this.http.get(`${this.baseUrl}vacation-request`);
   }
 
+  public getAllVacationRequestsByClinic(id): Observable<any> {
+    return this.http.get(`${this.baseUrl}vacation-request/${id}/clinic`);
+  }
+
 }
