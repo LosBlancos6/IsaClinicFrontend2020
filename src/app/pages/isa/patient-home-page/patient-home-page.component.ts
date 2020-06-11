@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClinicService } from 'src/app/services/clinic.service';
 import { Router } from '@angular/router';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-patient-home-page',
@@ -10,11 +11,13 @@ import { Router } from '@angular/router';
 export class PatientHomePageComponent implements OnInit {
 
   public listOfData = [];
+  private form: FormGroup;
 
-  constructor(private clinicService: ClinicService, private router: Router) { }
+  constructor(private clinicService: ClinicService, private router: Router, private fb: FormBuilder) { }
 
   ngOnInit() {
     this.setupData();
+    this.form = this.setupForm();
   }
 
   private setupData(): void {
@@ -22,6 +25,21 @@ export class PatientHomePageComponent implements OnInit {
       console.log(data);
       this.listOfData = data;
     })
+  }
+
+  private setupForm(): FormGroup {
+    return this.fb.group({
+      name: [''],
+      address: [''],
+      description: [''],
+    });
+  }
+
+  onSearch() {
+    console.log(this.form.value);
+    this.clinicService.searchClinic(this.form.value).subscribe(data => {
+      this.listOfData = data;
+    });
   }
 
   onView(id) {
