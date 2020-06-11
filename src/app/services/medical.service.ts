@@ -32,5 +32,29 @@ export class MedicalService {
     return this.http.put(`${this.baseUrl}medicalStaff/${id}`, body);
   }
 
+  public searchMedicalStaff(filter = {}): Observable<any> {
+    return this.http.get(`${this.baseUrl}medicalStaff/search${this.buildFilterRequest(filter)}`);
+  }
 
+  private buildFilterRequest(filterObject: any): string {
+    const values = Object.values(filterObject).filter(filterValue => filterValue !== null || filterValue !== '');
+    if (values.length === 0) {
+      return '';
+    }
+    let filterQuery = '?';
+    let counter = 0;
+    Object.keys(filterObject).forEach(x => {
+      if (filterObject[x] !== null && filterObject[x] !== '') {
+        let y = '';
+        if (counter === 0) {
+          y = '';
+        } else {
+          y = '&'
+        }
+        filterQuery = filterQuery + y + x + '=' + filterObject[x];
+        counter = counter + 1;
+      }
+    })
+    return filterQuery;
+  }
 }

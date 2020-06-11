@@ -6,8 +6,8 @@
       aria-describedby="basic-addon1" formControlName="firstName">
     <input type="lastName" class="form-control" placeholder="Last Name" aria-label="lastName"
       aria-describedby="basic-addon1" formControlName="lastName">
-    <input type="email" class="form-control" placeholder="Email" aria-label="email" aria-describedby="basic-addon1"
-      formControlName="email">
+    <input type="examinationType" class="form-control" placeholder="Examination Type" aria-label="examinationType"
+      aria-describedby="basic-addon1" formControlName="examinationType">
     <!-- <button (click)="backToListClinics()" style="width: 25%;" type="button" class="btn btn-primary">Seacrh</button> -->
     <button type="submit" (click)="onSearch()" style="width: 25%;" class="btn btn-primary"><i
         class="fa fa-search"></i></button>
@@ -19,7 +19,7 @@
         <th scope="col">First Name</th>
         <th scope="col">Last Name</th>
         <th scope="col">Email</th>
-        <!-- <th scope="col">Specialization</th> -->
+        <th scope="col">Examination Type</th>
         <!-- <th scope="col">Action</th> -->
       </tr>
     </thead>
@@ -28,7 +28,7 @@
         <td>{{ data.firstName }}</td>
         <td>{{ data.lastName }}</td>
         <td>{{ data.email }}</td>
-        <!-- <td>{{ data.examinationType }}</td> -->
+        <td>{{ data.examinationType }}</td>
         <td><a (click)="onView(data.id)" style="cursor:pointer;">View</a></td>
       </tr>
     </tbody>

@@ -54,8 +54,14 @@ export class MedicalListComponent implements OnInit {
     return this.fb.group({
       firstName: [''],
       lastName: [''],
-      email: [''],
       examinationType: ['']
+    });
+  }
+
+  onSearch() {
+    console.log(this.form.value);
+    this.medicalService.searchMedicalStaff(this.form.value).subscribe(data => {
+      this.listOfData = data;
     });
   }
 
