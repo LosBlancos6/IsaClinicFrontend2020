@@ -31,7 +31,7 @@ export class VacationRequestListComponent implements OnInit {
   // }
 
   // approveRequest(id) {
-  //   this.registrationRequestsService.approveRegistrations(id).subscribe(data => {
+  //   this.vacationRequestService.approveVacationRequest(id).subscribe(data => {
   //     console.log(data);
   //     alert('Approved succed');
   //     this.ngOnInit();
@@ -39,7 +39,7 @@ export class VacationRequestListComponent implements OnInit {
   // }
 
   // declineRequest(id) {
-  //   this.registrationRequestsService.deniedRegistrations(id).subscribe(data => {
+  //   this.vacationRequestService.declineVacationRequest(id).subscribe(data => {
   //     console.log(data);
   //     alert('Denied succed');
   //     this.ngOnInit();

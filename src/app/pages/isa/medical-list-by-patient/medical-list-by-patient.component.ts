@@ -43,8 +43,9 @@ export class MedicalListByPatientComponent implements OnInit {
 
   onSearch() {
     console.log(this.form.value);
-    this.medicalService.searchMedicalStaff(this.form.value).subscribe(data => {
+    this.medicalService.searchMedicalStaff(this.form.value, this.clinicId).subscribe(data => {
       this.listOfData = data;
+      alert('Doctor isn\'t in this clinic');
     });
   }
 

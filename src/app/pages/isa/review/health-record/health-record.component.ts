@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ExaminationRequestService } from 'src/app/services/examination-request.service';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-health-record',
@@ -10,11 +11,13 @@ import { ExaminationRequestService } from 'src/app/services/examination-request.
 export class HealthRecordComponent implements OnInit {
 
   public listOfData = [];
+  private form: FormGroup;
 
-  constructor(private examinationRequestService: ExaminationRequestService, private router: Router) { }
+  constructor(private examinationRequestService: ExaminationRequestService, private router: Router, private fb: FormBuilder) { }
 
   ngOnInit() {
     this.setupData();
+    this.form = this.setupForm();
   }
 
   private setupData(): void {
@@ -23,6 +26,21 @@ export class HealthRecordComponent implements OnInit {
       console.log(data);
       this.listOfData = data;
     })
+  }
+
+  private setupForm(): FormGroup {
+    return this.fb.group({
+      examinationTypeName: [''],
+      examinationDate: [''],
+      price: [''],
+    });
+  }
+
+  onSearch() {
+    console.log(this.form.value);
+    this.examinationRequestService.searchExamination(this.form.value).subscribe(data => {
+      this.listOfData = data;
+    });
   }
 
   onAssess(id) {

@@ -23,18 +23,18 @@ export class PatientListComponent implements OnInit {
     this.form = this.setupForm();
   }
 
-  // private setupData(): void {
-  //   this.patientService.getAllPatientsByClinic(this.id).subscribe(data => {
-  //     console.log(data);
-  //     this.listOfData = data;
-  //   })
-  // }
   private setupData(): void {
-    this.patientService.getAllPatients().subscribe(data => {
+    this.patientService.getAllPatientsByClinic(this.id).subscribe(data => {
       console.log(data);
       this.listOfData = data;
     })
   }
+  // private setupData(): void {
+  //   this.patientService.getAllPatients().subscribe(data => {
+  //     console.log(data);
+  //     this.listOfData = data;
+  //   })
+  // }
 
   private extractId(): void {
     this.id = this.route.snapshot.params.id;

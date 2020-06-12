@@ -83,7 +83,7 @@ export class ViewExaminationPredefinedComponent implements OnInit {
     //   patientId: user.id,
     //   examinationRequestId: data.id,
     // }
-    console.log(Object);
+    // console.log(Object);
     this.examinationRequestService.bookingExamination(user.id, data.id).subscribe(data => {
       alert('Booking Successful!');
       this.router.navigateByUrl(`dashboard/choose-clinic`);

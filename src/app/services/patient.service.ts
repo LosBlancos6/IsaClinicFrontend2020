@@ -25,7 +25,7 @@ export class PatientService {
   }
 
   public getAllPatientsByClinic(id): Observable<any> {
-    return this.http.get(`${this.baseUrl}clinics/${id}/patients`);
+    return this.http.get(`${this.baseUrl}patients/${id}/clinic`);
   }
 
 }

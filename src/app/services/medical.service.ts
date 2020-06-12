@@ -32,8 +32,8 @@ export class MedicalService {
     return this.http.put(`${this.baseUrl}medicalStaff/${id}`, body);
   }
 
-  public searchMedicalStaff(filter = {}): Observable<any> {
-    return this.http.get(`${this.baseUrl}medicalStaff/search${this.buildFilterRequest(filter)}`);
+  public searchMedicalStaff(filter = {}, id): Observable<any> {
+    return this.http.get(`${this.baseUrl}medicalStaff/search/${id}${this.buildFilterRequest(filter)}`);
   }
 
   private buildFilterRequest(filterObject: any): string {

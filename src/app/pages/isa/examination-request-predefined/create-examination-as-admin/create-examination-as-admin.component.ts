@@ -61,6 +61,8 @@ export class CreateExaminationAsAdminComponent implements OnInit {
     console.log(filterObject);
     this.examinationRequestService.createPredefinedExamination(filterObject).subscribe(data => {
       console.log(data);
+      alert('Create Successful!');
+      this.ngOnInit();
     })
   }
 

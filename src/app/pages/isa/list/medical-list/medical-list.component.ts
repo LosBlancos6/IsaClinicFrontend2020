@@ -47,7 +47,10 @@ export class MedicalListComponent implements OnInit {
       // console.log(data);
       alert('Delete Successful!');
       this.ngOnInit();
-    })
+    }, error => {
+      alert('Doctor cannot be deleted because he has upcoming examination!');
+      this.ngOnInit();
+    });
   }
 
   private setupForm(): FormGroup {
@@ -60,8 +63,10 @@ export class MedicalListComponent implements OnInit {
 
   onSearch() {
     console.log(this.form.value);
-    this.medicalService.searchMedicalStaff(this.form.value).subscribe(data => {
+    this.medicalService.searchMedicalStaff(this.form.value, this.id).subscribe(data => {
       this.listOfData = data;
+    }, error => {
+      alert('Doctor isn\'t in this clinic');
     });
   }
 
