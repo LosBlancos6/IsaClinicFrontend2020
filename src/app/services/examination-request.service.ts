@@ -28,6 +28,10 @@ export class ExaminationRequestService {
     return this.http.get(`${this.baseUrl}examination-request/${id}/patient-examination`);
   }
 
+  public getAllExaminationRequestByClinic(id): Observable<any> {
+    return this.http.get(`${this.baseUrl}examination-request/${id}/clinic`);
+  }
+
   public getAvailableExaminationsOfDoctor(body, id): Observable<any> {
     return this.http.post(`${this.baseUrl}examination-request/available/${id}/doctor`, body);
   }

@@ -45,6 +45,9 @@
         <a routerLink="/dashboard/registration-requests">Registration Requests</a>
       </li>
       <li *ngIf="checkRole([adminRole]) && user.adminType=='CLINIC_ADMIN'" class="btn btn-light">
+        <a routerLink="/dashboard/examination-request-admin">Examination Requests</a>
+      </li>
+      <li *ngIf="checkRole([adminRole]) && user.adminType=='CLINIC_ADMIN'" class="btn btn-light">
         <a routerLink="/dashboard/vacation-request-list">Vacation Requests</a>
       </li>
 
