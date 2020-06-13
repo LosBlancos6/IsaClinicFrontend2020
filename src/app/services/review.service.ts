@@ -16,4 +16,8 @@ export class ReviewService {
     return this.http.post(`${this.baseUrl}review/doctor`, body);
   }
 
+  public averageDoctorRating(id): Observable<any> {
+    return this.http.get(`${this.baseUrl}review/doctor/${id}/average-rating`);
+  }
+
 }

@@ -71,6 +71,26 @@
       aria-describedby="basic-addon1" formControlName="rePassword">
   </span>
 
+  <span style="display:flex">
+    <label>Examination Type:</label>
+    <select class="browser-default custom-select" style="width: 50%; height: 35px; margin-top: 10px;"
+      formControlName="examinationTypeId">
+      <option *ngFor="let item of listOfExaminationType" [value]="item.id">{{item.name}}</option>
+    </select>
+  </span>
+
+  <span style="display:flex" class="md-form md-outline">
+    <label>Start At:</label>
+    <input style="width: 50%;" type="time" id="default-picker" class="form-control" placeholder="Select time"
+      formControlName="time1">
+  </span>
+
+  <span style="display:flex" class="md-form md-outline">
+    <label>End At:</label>
+    <input style="width: 50%;" type="time" id="default-picker" class="form-control" placeholder="Select time"
+      formControlName="time2">
+  </span>
+
   <button (click)="backToListClinics()" style="margin-top: 10px; width: 30%;" type="button"
     class="btn btn-secondary">Back
     to list</button>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { MedicalService } from 'src/app/services/medical.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ReviewService } from 'src/app/services/review.service';
 
 @Component({
   selector: 'app-medical-list',
@@ -14,7 +15,7 @@ export class MedicalListComponent implements OnInit {
   private id;
   private form: FormGroup;
 
-  constructor(private medicalService: MedicalService, private router: Router, private route: ActivatedRoute, private fb: FormBuilder) { }
+  constructor(private medicalService: MedicalService, private router: Router, private route: ActivatedRoute, private fb: FormBuilder, private reviewService: ReviewService) { }
 
   ngOnInit() {
     this.extractId();
@@ -67,6 +68,17 @@ export class MedicalListComponent implements OnInit {
       this.listOfData = data;
     }, error => {
       alert('Doctor isn\'t in this clinic');
+    });
+  }
+
+  viewAverageRating(id) {
+    this.reviewService.averageDoctorRating(id).subscribe(data => {
+      console.log(data);
+      if (isNaN(data)) {
+        alert('Doctor has not been rated yet!');
+      } else {
+        alert('Average rate is ' + data);
+      }
     });
   }
 

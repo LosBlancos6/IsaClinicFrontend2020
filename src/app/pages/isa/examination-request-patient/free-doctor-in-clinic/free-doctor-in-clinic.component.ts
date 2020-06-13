@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AdminService } from 'src/app/services/admin.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MedicalService } from 'src/app/services/medical.service';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-free-doctor-in-clinic',
@@ -11,11 +12,13 @@ import { MedicalService } from 'src/app/services/medical.service';
 export class FreeDoctorInClinicComponent implements OnInit {
 
   public listOfData = [];
+  private form: FormGroup;
 
-  constructor(private medicalService: MedicalService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private medicalService: MedicalService, private router: Router, private route: ActivatedRoute, private fb: FormBuilder) { }
 
   ngOnInit() {
     this.setupData();
+    this.form = this.setupForm();
   }
 
   private setupData(): void {
@@ -26,6 +29,24 @@ export class FreeDoctorInClinicComponent implements OnInit {
       console.log(data);
       this.listOfData = data;
     })
+  }
+
+  private setupForm(): FormGroup {
+    return this.fb.group({
+      firstName: [''],
+      lastName: [''],
+      examinationType: ['']
+    });
+  }
+
+  onSearch() {
+    console.log(this.form.value);
+    const clinicId = this.route.snapshot.params.id;
+    this.medicalService.searchMedicalStaff(this.form.value, clinicId).subscribe(data => {
+      this.listOfData = data;
+    }, error => {
+      alert('Doctor isn\'t in this clinic');
+    });
   }
 
   onView(id) {
