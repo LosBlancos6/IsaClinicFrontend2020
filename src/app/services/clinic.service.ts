@@ -28,6 +28,10 @@ export class ClinicService {
     return this.http.get(`${this.baseUrl}clinics/search${this.buildFilterRequest(filter)}`);
   }
 
+  public searchFreeDoctorInClinic(body): Observable<any> {
+    return this.http.post(`${this.baseUrl}clinics/search-doctor`, body);
+  }
+
 
 
   private buildFilterRequest(filterObject: any): string {

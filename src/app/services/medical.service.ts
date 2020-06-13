@@ -32,6 +32,10 @@ export class MedicalService {
     return this.http.put(`${this.baseUrl}medicalStaff/${id}`, body);
   }
 
+  public medicalListByExaminationType(id, clinicId): Observable<any> {
+    return this.http.get(`${this.baseUrl}medicalStaff/list/examination-type/${id}/${clinicId}`);
+  }
+
   public searchMedicalStaff(filter = {}, id): Observable<any> {
     return this.http.get(`${this.baseUrl}medicalStaff/search/${id}${this.buildFilterRequest(filter)}`);
   }

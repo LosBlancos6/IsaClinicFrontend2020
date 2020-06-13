@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ExaminationTypeService } from 'src/app/services/examination-type.service';
 import { MedicalService } from 'src/app/services/medical.service';
 import { OperationRoomService } from 'src/app/services/operation-room.service';
@@ -7,21 +7,20 @@ import { PatientService } from 'src/app/services/patient.service';
 import { ExaminationRequestService } from 'src/app/services/examination-request.service';
 
 @Component({
-  selector: 'app-create-examination-as-admin',
-  templateUrl: './create-examination-as-admin.component.html',
-  styleUrls: ['./create-examination-as-admin.component.css']
+  selector: 'app-create-available-examination',
+  templateUrl: './create-available-examination.component.html',
+  styleUrls: ['./create-available-examination.component.css']
 })
-export class CreateExaminationAsAdminComponent implements OnInit {
+export class CreateAvailableExaminationComponent implements OnInit {
+
 
   validateForm: FormGroup;
   public listOfExaminationType = [];
   public listOfDoctors = [];
-  public listOfOperationRooms = [];
   public listOfPatients = [];
   private isSearched: boolean = false;
-  // private ovaj;
 
-  constructor(private fb: FormBuilder, private examinationTypeService: ExaminationTypeService, private medicalService: MedicalService, private operationRoomService: OperationRoomService, private patientService: PatientService, private examinationRequestService: ExaminationRequestService) { }
+  constructor(private fb: FormBuilder, private examinationTypeService: ExaminationTypeService, private medicalService: MedicalService, private patientService: PatientService, private examinationRequestService: ExaminationRequestService) { }
 
   ngOnInit() {
     this.setupForm();
@@ -34,8 +33,6 @@ export class CreateExaminationAsAdminComponent implements OnInit {
       time: [null, [Validators.required]],
       examinationTypeId: [null, [Validators.required]],
       doctorId: [null, [Validators.required]],
-      operationRoomId: [null, [Validators.required]],
-      // patientId: [null, [Validators.required]]
     });
   }
 
@@ -47,8 +44,6 @@ export class CreateExaminationAsAdminComponent implements OnInit {
     const examinationTypeId = this.validateForm.value.examinationTypeId;
     const doctorId = this.validateForm.value.doctorId;
     const clinicId = user.myClinic.id;
-    const operationRoomId = this.validateForm.value.operationRoomId;
-    // const patientId = this.validateForm.value.patientId;
 
     const filterObject = {
       examinationDate: date,
@@ -56,14 +51,15 @@ export class CreateExaminationAsAdminComponent implements OnInit {
       examinationTypeId: examinationTypeId,
       doctorId: doctorId,
       clinicId: clinicId,
-      operationRoomId: operationRoomId,
-      // patientId: patientId
     }
 
     console.log(filterObject);
-    this.examinationRequestService.createPredefinedExamination(filterObject).subscribe(data => {
+    this.examinationRequestService.createAvailableExamination(filterObject).subscribe(data => {
       console.log(data);
       alert('Create Successful!');
+      this.ngOnInit();
+    }, error => {
+      alert('Doctor doesn\'t work at that hours');
       this.ngOnInit();
     })
   }
@@ -79,38 +75,10 @@ export class CreateExaminationAsAdminComponent implements OnInit {
     this.examinationTypeService.getAllExaminationType().subscribe(data => {
       this.listOfExaminationType = data;
     });
-
-    const user = JSON.parse(localStorage.getItem("user"));
-    // this.medicalService.getAllMedicalByClinic(user.myClinic.id).subscribe(data => {
-    //   console.log(data);
-    //   this.listOfDoctors = data;
-    // });
-    this.operationRoomService.getOperationRoomsByClinicId(user.myClinic.id).subscribe((data: any) => {
-      console.log(data);
-      this.listOfOperationRooms = data;
-    });
-    // this.patientService.getAllPatients().subscribe(data => {
-    //   console.log(data);
-    //   this.listOfPatients = data;
-    // });
-    // this.patientService.getAllPatientsByClinic(user.myClinic.id).subscribe(data => {
-    //   console.log(data);
-    //   this.listOfPatients = data;
-    // });
   }
-
-  // chooseDoctor() {
-  //   this.isSearched = true;
-  //   const examinationTypeId = this.validateForm.value.examinationTypeId;
-  //   this.medicalService.medicalListByExaminationType(examinationTypeId).subscribe(data => {
-  //     console.log(data);
-  //     this.listOfDoctors = data;
-  //   });
-  // }
 
   onEditClick(item: any) {
     console.log('examinationTypeid', item);
-    // this.ovaj = item;
     this.isSearched = true;
     const user = JSON.parse(localStorage.getItem("user"));
 
@@ -119,6 +87,5 @@ export class CreateExaminationAsAdminComponent implements OnInit {
       this.listOfDoctors = data;
     });
   }
-
 
 }

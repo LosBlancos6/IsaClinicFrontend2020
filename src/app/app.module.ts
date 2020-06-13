@@ -51,6 +51,8 @@ import { EditClinicProfileComponent } from './pages/isa/edit-clinic-profile/edit
 import { VacationRequestListComponent } from './pages/isa/vacation/vacation-request-list/vacation-request-list.component';
 import { AngularYandexMapsModule, IConfig } from 'angular8-yandex-maps';
 import { ClinicLocationComponent } from './pages/isa/clinic-location/clinic-location.component';
+import { CreateAvailableExaminationComponent } from './pages/isa/examination-request-predefined/create-available-examination/create-available-examination.component';
+import { SchedulingExaminationAsPatientComponent } from './pages/isa/scheduling-examination-as-patient/scheduling-examination-as-patient.component';
 
 const mapConfig: IConfig = {
   apiKey: '658f67a2-fd77-42e9-b99e-2bd48c4ccad4',
@@ -94,7 +96,9 @@ const mapConfig: IConfig = {
     VacationRequestComponent,
     EditClinicProfileComponent,
     VacationRequestListComponent,
-    ClinicLocationComponent
+    ClinicLocationComponent,
+    CreateAvailableExaminationComponent,
+    SchedulingExaminationAsPatientComponent
   ],
   imports: [
     BrowserModule,

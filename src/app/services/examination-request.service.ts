@@ -16,6 +16,10 @@ export class ExaminationRequestService {
     return this.http.post(`${this.baseUrl}examination-request/create`, body);
   }
 
+  public createAvailableExamination(body): Observable<any> {
+    return this.http.post(`${this.baseUrl}examination-request/available-examinations`, body);
+  }
+
   public getExaminationRequestByMedical(id): Observable<any> {
     return this.http.get(`${this.baseUrl}examination-request/${id}/doctor-examination`);
   }
