@@ -6,6 +6,7 @@ import { PatientService } from 'src/app/services/patient.service';
 import { OperationRoomService } from 'src/app/services/operation-room.service';
 import { ExaminationRequestService } from 'src/app/services/examination-request.service';
 import { ClinicService } from 'src/app/services/clinic.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-scheduling-examination-as-patient',
@@ -19,7 +20,7 @@ export class SchedulingExaminationAsPatientComponent implements OnInit {
   public listOfClinic = [];
   private isSearched: boolean = false;
 
-  constructor(private fb: FormBuilder, private examinationTypeService: ExaminationTypeService, private clinicService: ClinicService) { }
+  constructor(private fb: FormBuilder, private examinationTypeService: ExaminationTypeService, private clinicService: ClinicService, private router: Router) { }
 
   ngOnInit() {
     this.setupForm();
@@ -45,7 +46,8 @@ export class SchedulingExaminationAsPatientComponent implements OnInit {
         examinationType: data
       }
       console.log(filterObject);
-
+      // localStorage.setItem('examinationDate', token);
+      localStorage.setItem('Object', JSON.stringify(filterObject));
       this.clinicService.searchFreeDoctorInClinic(filterObject).subscribe(data => {
         console.log(data);
         this.listOfClinic = data;
@@ -69,6 +71,7 @@ export class SchedulingExaminationAsPatientComponent implements OnInit {
 
   onView(id) {
     console.log(id);
+    this.router.navigateByUrl(`dashboard/free-doctor-in-clinic/${id}`);
   }
 
 

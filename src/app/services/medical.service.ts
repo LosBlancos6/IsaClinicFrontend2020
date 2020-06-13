@@ -36,6 +36,10 @@ export class MedicalService {
     return this.http.get(`${this.baseUrl}medicalStaff/list/examination-type/${id}/${clinicId}`);
   }
 
+  public getDoctorsWithAvailableExaminations(body, id): Observable<any> {
+    return this.http.post(`${this.baseUrl}medicalStaff/available-examination/${id}/clinic`, body);
+  }
+
   public searchMedicalStaff(filter = {}, id): Observable<any> {
     return this.http.get(`${this.baseUrl}medicalStaff/search/${id}${this.buildFilterRequest(filter)}`);
   }

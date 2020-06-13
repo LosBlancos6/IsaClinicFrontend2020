@@ -28,8 +28,16 @@ export class ExaminationRequestService {
     return this.http.get(`${this.baseUrl}examination-request/${id}/patient-examination`);
   }
 
+  public getAvailableExaminationsOfDoctor(body, id): Observable<any> {
+    return this.http.post(`${this.baseUrl}examination-request/available/${id}/doctor`, body);
+  }
+
   public bookingExamination(patientId, examinationRequestId, body = {}): Observable<any> {
     return this.http.post(`${this.baseUrl}examination-request/predefined-booking/${patientId}/${examinationRequestId}`, body);
+  }
+
+  public bookingAvailableExamination(patientId, examinationRequestId, body = {}): Observable<any> {
+    return this.http.post(`${this.baseUrl}examination-request/available-examination/${patientId}/${examinationRequestId}`, body);
   }
 
   public searchExamination(filter = {}): Observable<any> {

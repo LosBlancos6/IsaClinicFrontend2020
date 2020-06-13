@@ -36,7 +36,10 @@ import { EditClinicProfileComponent } from './pages/isa/edit-clinic-profile/edit
 import { VacationRequestListComponent } from './pages/isa/vacation/vacation-request-list/vacation-request-list.component';
 import { ClinicLocationComponent } from './pages/isa/clinic-location/clinic-location.component';
 import { CreateAvailableExaminationComponent } from './pages/isa/examination-request-predefined/create-available-examination/create-available-examination.component';
-import { SchedulingExaminationAsPatientComponent } from './pages/isa/scheduling-examination-as-patient/scheduling-examination-as-patient.component';
+import { SchedulingExaminationAsPatientComponent } from './pages/isa/examination-request-patient/scheduling-examination-as-patient/scheduling-examination-as-patient.component';
+import { FreeDoctorInClinicComponent } from './pages/isa/examination-request-patient/free-doctor-in-clinic/free-doctor-in-clinic.component';
+import { AvailableExaminationOfDoctorComponent } from './pages/isa/examination-request-patient/available-examination-of-doctor/available-examination-of-doctor.component';
+import { ViewAvailableExaminationComponent } from './pages/isa/examination-request-patient/view-available-examination/view-available-examination.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/auth/login' },
@@ -73,6 +76,9 @@ const routes: Routes = [
       { path: 'health-record', component: HealthRecordComponent },
       { path: 'review-doctor/:id', component: ReviewDoctorComponent },
       { path: 'scheduling-examination-as-patient', component: SchedulingExaminationAsPatientComponent },
+      { path: 'free-doctor-in-clinic/:id', component: FreeDoctorInClinicComponent },
+      { path: 'available-examination-of-doctor/:id', component: AvailableExaminationOfDoctorComponent },
+      { path: 'view-available-examination/:id', component: ViewAvailableExaminationComponent },
 
       //Admin
       { path: 'create-doctor', component: CreateDoctorComponent },
