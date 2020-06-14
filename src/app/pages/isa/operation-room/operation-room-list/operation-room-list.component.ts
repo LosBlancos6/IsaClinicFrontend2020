@@ -24,6 +24,7 @@ export class OperationRoomListComponent implements OnInit {
   private setupData(): void {
     const user = JSON.parse(localStorage.getItem('user'));
     this.operationRoomService.getOperationRoomsByClinicId(user.myClinic.id).subscribe(data => {
+      console.log(data);
       this.listOfData = data;
     })
   }
@@ -37,12 +38,12 @@ export class OperationRoomListComponent implements OnInit {
 
   onSearch() {
     console.log(this.form.value);
-    // const clinicId = this.route.snapshot.params.id;
-    // this.operationRoomService.searchOperationRoom(this.form.value, clinicId).subscribe(data => {
-    //   this.listOfData = data;
-    // }, error => {
-    //   alert('Doctor isn\'t in this clinic');
-    // });
+    const user = JSON.parse(localStorage.getItem('user'));
+    this.operationRoomService.searchOperationRoomsByAdmin(this.form.value, user.myClinic.id).subscribe(data => {
+      this.listOfData = data;
+    }, error => {
+      alert('Doctor isn\'t in this clinic');
+    });
   }
 
   onEdit(id) {

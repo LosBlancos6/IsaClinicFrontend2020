@@ -41,6 +41,10 @@ export class OperationRoomService {
     return this.http.get(`${this.baseUrl}operation-room/${clinicId}/${examinationId}/search${this.buildFilterRequest(filter)}`);
   }
 
+  public searchOperationRoomsByAdmin(filter = {}, clinicId): Observable<any> {
+    return this.http.get(`${this.baseUrl}operation-room/${clinicId}/search${this.buildFilterRequest(filter)}`);
+  }
+
   private buildFilterRequest(filterObject: any): string {
     const values = Object.values(filterObject).filter(filterValue => filterValue !== null || filterValue !== '');
     if (values.length === 0) {

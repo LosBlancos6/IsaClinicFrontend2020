@@ -57,14 +57,14 @@
           Clinic</a>
       </li>
       <li *ngIf="checkRole([adminRole])" class="btn btn-light"><a routerLink="/dashboard/admin-list">Admins</a></li>
-      <li *ngIf="checkRole([adminRole])" class="btn btn-light"><a
+      <li *ngIf="checkRole([adminRole]) && user.adminType=='CLINIC_ADMIN'" class="btn btn-light"><a
           [routerLink]="['/dashboard/clinic', user.myClinic.id, 'medical']">Medicals</a></li>
       <li *ngIf="checkRole([adminRole, medicalRole])" class="btn btn-light"><a
           [routerLink]="['/dashboard/clinic', user.myClinic.id, 'patients']">Patients</a></li>
       <li *ngIf="checkRole([adminRole])" class="btn btn-light"><a routerLink="/dashboard/clinic-list">Clinics</a></li>
-      <li *ngIf="checkRole([adminRole])" class="btn btn-light"><a
+      <li *ngIf="checkRole([adminRole]) && user.adminType=='CLINIC_ADMIN'" class="btn btn-light"><a
           routerLink="/dashboard//examination-type-list">Examination Types</a></li>
-      <li *ngIf="checkRole([adminRole])" class="btn btn-light">
+      <li *ngIf="checkRole([adminRole]) && user.adminType=='CLINIC_ADMIN'" class="btn btn-light">
         <a routerLink="/dashboard/operation-room-list">Operation Rooms</a>
       </li>
     </ul>

@@ -44,7 +44,9 @@ export class EditClinicProfileComponent implements OnInit {
     this.validateForm = this.fb.group({
       name: [{ value: null }, [Validators.required]],
       address: [{ value: null }, [Validators.required]],
-      description: [{ value: null }, [Validators.required]]
+      description: [{ value: null }, [Validators.required]],
+      x: [{ value: null }, [Validators.required]],
+      y: [{ value: null }, [Validators.required]]
     });
   }
 
@@ -63,7 +65,9 @@ export class EditClinicProfileComponent implements OnInit {
       const formValues = {
         name: data.name,
         address: data.address,
-        description: data.description
+        description: data.description,
+        x: data.x,
+        y: data.y
       }
       this.validateForm.setValue(formValues);
     })

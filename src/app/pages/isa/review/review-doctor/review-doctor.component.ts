@@ -47,6 +47,8 @@ export class ReviewDoctorComponent implements OnInit {
       console.log(data);
       alert('assessment successful');
       this.router.navigateByUrl('dashboard/choose-clinic');
+    }, error => {
+      alert('Doctor is already rated!');
     });
   }
 

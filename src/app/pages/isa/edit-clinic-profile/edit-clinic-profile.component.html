@@ -22,6 +22,19 @@
       aria-describedby="basic-addon1" formControlName="description">
   </span>
 
+  <span style="display:flex">
+    <label>X coordinate:</label>
+    <input type="text" class="form-control" placeholder="Xcoordinate" aria-label="Xcoordinate"
+      aria-describedby="basic-addon1" formControlName="x">
+  </span>
+
+  <span style="display:flex">
+    <label>Y coordinate:</label>
+    <input type="text" class="form-control" placeholder="Ycoordinate" aria-label="Ycoordinate"
+      aria-describedby="basic-addon1" formControlName="y">
+  </span>
+
+
   <button *ngIf="checkRole([patientRole])" (click)="backToList()" style="margin-top: 10px; width: 30%;" type="button"
     class="btn btn-secondary">Back
     to list</button>
