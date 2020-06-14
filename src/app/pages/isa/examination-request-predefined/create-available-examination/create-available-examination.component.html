@@ -19,18 +19,17 @@
 
   <span style="display:flex">
     <label>Examination Type:</label>
-    <select class="browser-default custom-select" style="width: 40%;" formControlName="examinationTypeId"
-      (change)="onEditClick($event.target.value)">
+    <select class="browser-default custom-select" style="width: 40%;" formControlName="examinationTypeId">
       <option *ngFor="let item of listOfExaminationType" [value]="item.id">{{item.name}}</option>
     </select>
   </span>
 
-  <span style="display:flex" *ngIf="isSearched">
+  <!-- <span style="display:flex" *ngIf="isSearched">
     <label>Choose Doctor:</label>
     <select class="browser-default custom-select" style="width: 40%;" formControlName="doctorId">
       <option *ngFor="let item of listOfDoctors" [value]="item.id">{{item.firstName}}</option>
     </select>
-  </span>
+  </span> -->
 
   <br>
 

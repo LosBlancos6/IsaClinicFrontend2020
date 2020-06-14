@@ -31,8 +31,8 @@ export class CreateAvailableExaminationComponent implements OnInit {
     this.validateForm = this.fb.group({
       date: [null, [Validators.required]],
       time: [null, [Validators.required]],
-      examinationTypeId: [null, [Validators.required]],
-      doctorId: [null, [Validators.required]],
+      examinationTypeId: [null, [Validators.required]]
+      // doctorId: [null, [Validators.required]],
     });
   }
 
@@ -42,7 +42,8 @@ export class CreateAvailableExaminationComponent implements OnInit {
     const date = this.convert(this.validateForm.value.date);
     const time = this.validateForm.value.time;
     const examinationTypeId = this.validateForm.value.examinationTypeId;
-    const doctorId = this.validateForm.value.doctorId;
+    // const doctorId = this.validateForm.value.doctorId;
+    const doctorId = user.id;
     const clinicId = user.myClinic.id;
 
     const filterObject = {
@@ -59,7 +60,7 @@ export class CreateAvailableExaminationComponent implements OnInit {
       alert('Create Successful!');
       this.ngOnInit();
     }, error => {
-      alert('Doctor doesn\'t work at that hours');
+      alert('Doctor doesn\'t work at that hours!');
       this.ngOnInit();
     })
   }
@@ -77,15 +78,15 @@ export class CreateAvailableExaminationComponent implements OnInit {
     });
   }
 
-  onEditClick(item: any) {
-    console.log('examinationTypeid', item);
-    this.isSearched = true;
-    const user = JSON.parse(localStorage.getItem("user"));
+  // onEditClick(item: any) {
+  //   console.log('examinationTypeid', item);
+  //   this.isSearched = true;
+  //   const user = JSON.parse(localStorage.getItem("user"));
 
-    this.medicalService.medicalListByExaminationType(item, user.myClinic.id).subscribe(data => {
-      console.log(data);
-      this.listOfDoctors = data;
-    });
-  }
+  //   this.medicalService.medicalListByExaminationType(item, user.myClinic.id).subscribe(data => {
+  //     console.log(data);
+  //     this.listOfDoctors = data;
+  //   });
+  // }
 
 }

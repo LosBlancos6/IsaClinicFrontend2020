@@ -48,8 +48,8 @@ export class ExaminationRequestService {
     return this.http.put(`${this.baseUrl}examination-request/${examinationId}/approve/${operationRoomId}`, body);
   }
 
-  public searchExamination(filter = {}): Observable<any> {
-    return this.http.get(`${this.baseUrl}examination-request/search${this.buildFilterRequest(filter)}`);
+  public searchExamination(filter = {}, id): Observable<any> {
+    return this.http.get(`${this.baseUrl}examination-request/search/${id}${this.buildFilterRequest(filter)}`);
   }
 
 

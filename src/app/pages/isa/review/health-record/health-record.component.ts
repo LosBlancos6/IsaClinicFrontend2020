@@ -38,8 +38,11 @@ export class HealthRecordComponent implements OnInit {
 
   onSearch() {
     console.log(this.form.value);
-    this.examinationRequestService.searchExamination(this.form.value).subscribe(data => {
+    const user = JSON.parse(localStorage.getItem('user'));
+    this.examinationRequestService.searchExamination(this.form.value, user.id).subscribe(data => {
       this.listOfData = data;
+    }, error => {
+      alert('Can\'t find examination!');
     });
   }
 
