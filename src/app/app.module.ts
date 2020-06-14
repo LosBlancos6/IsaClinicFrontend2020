@@ -57,6 +57,7 @@ import { FreeDoctorInClinicComponent } from './pages/isa/examination-request-pat
 import { AvailableExaminationOfDoctorComponent } from './pages/isa/examination-request-patient/available-examination-of-doctor/available-examination-of-doctor.component';
 import { ViewAvailableExaminationComponent } from './pages/isa/examination-request-patient/view-available-examination/view-available-examination.component';
 import { ExaminationRequestAdminComponent } from './pages/isa/examination-request-admin/examination-request-admin.component';
+import { ApproveExaminationRequestAdminComponent } from './pages/isa/approve-examination-request-admin/approve-examination-request-admin.component';
 
 const mapConfig: IConfig = {
   apiKey: '658f67a2-fd77-42e9-b99e-2bd48c4ccad4',
@@ -106,7 +107,8 @@ const mapConfig: IConfig = {
     FreeDoctorInClinicComponent,
     AvailableExaminationOfDoctorComponent,
     ViewAvailableExaminationComponent,
-    ExaminationRequestAdminComponent
+    ExaminationRequestAdminComponent,
+    ApproveExaminationRequestAdminComponent
   ],
   imports: [
     BrowserModule,

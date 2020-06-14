@@ -34,6 +34,16 @@ export class OperationRoomListComponent implements OnInit {
     });
   }
 
+  onSearch() {
+    console.log(this.form.value);
+    // const clinicId = this.route.snapshot.params.id;
+    // this.operationRoomService.searchOperationRoom(this.form.value, clinicId).subscribe(data => {
+    //   this.listOfData = data;
+    // }, error => {
+    //   alert('Doctor isn\'t in this clinic');
+    // });
+  }
+
   onEdit(id) {
     this.router.navigateByUrl(`dashboard/edit-operation-room/${id}`)
   }

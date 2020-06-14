@@ -41,6 +41,7 @@ import { FreeDoctorInClinicComponent } from './pages/isa/examination-request-pat
 import { AvailableExaminationOfDoctorComponent } from './pages/isa/examination-request-patient/available-examination-of-doctor/available-examination-of-doctor.component';
 import { ViewAvailableExaminationComponent } from './pages/isa/examination-request-patient/view-available-examination/view-available-examination.component';
 import { ExaminationRequestAdminComponent } from './pages/isa/examination-request-admin/examination-request-admin.component';
+import { ApproveExaminationRequestAdminComponent } from './pages/isa/approve-examination-request-admin/approve-examination-request-admin.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/auth/login' },
@@ -89,6 +90,7 @@ const routes: Routes = [
       { path: 'vacation-request-list', component: VacationRequestListComponent },
       { path: 'clinic-location/:id', component: ClinicLocationComponent },
       { path: 'examination-request-admin', component: ExaminationRequestAdminComponent },
+      { path: 'approve-examination-request/:id', component: ApproveExaminationRequestAdminComponent },
 
       //Doctor
       { path: 'vacation-request', component: VacationRequestComponent },

@@ -30,4 +30,8 @@ export class ExaminationRequestAdminComponent implements OnInit {
   // onView(id) {
   //   this.router.navigateByUrl(`dashboard/admin-profile/${id}`)
   // }
+
+  approveRequest(id) {
+    this.router.navigateByUrl(`dashboard/approve-examination-request/${id}`);
+  }
 }

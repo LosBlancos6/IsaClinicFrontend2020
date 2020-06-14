@@ -1,0 +1,33 @@
+<div id="one" [formGroup]="validateForm">
+  <h3>Schedule Examination</h3> <br>
+
+  <input type="name" class="form-control" placeholder="Name of Room" aria-label="name" aria-describedby="basic-addon1"
+    formControlName="name">
+
+  <input type="number" class="form-control" placeholder="Number of Room" aria-label="number"
+    aria-describedby="basic-addon1" formControlName="number" formControlName="number">
+
+  <button (click)="onSearch()" style="margin-top: 10px; width: 30%;" type="button" class="btn btn-secondary">Search Free
+    Rooms</button>
+
+  <div class="fadeInDown" *ngIf="isSearched">
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of listOfFreeRooms">
+          <td>{{ data.name }}</td>
+          <td>{{ data.number }}</td>
+          <td>
+            <a (click)="addRoom(data.id)" style=" cursor:pointer;">Add Room</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
