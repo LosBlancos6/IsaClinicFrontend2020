@@ -90,7 +90,7 @@ export class EditClinicProfileComponent implements OnInit {
     this.clinicService.updateClinic(this.id, this.validateForm.value).subscribe(data => {
       console.log(data);
       alert('Update Successful!');
-      this.ngOnInit();
+      // this.ngOnInit();
     })
   }
 

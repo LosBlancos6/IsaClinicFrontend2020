@@ -21,7 +21,7 @@ export class ClinicService {
   }
 
   public updateClinic(id, body): Observable<any> {
-    return this.http.put(`${this.baseUrl}clinics/${id}`, body);
+    return this.http.patch(`${this.baseUrl}clinics/${id}`, body);
   }
 
   public searchClinic(filter = {}): Observable<any> {
