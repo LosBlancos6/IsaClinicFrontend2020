@@ -58,6 +58,7 @@ import { AvailableExaminationOfDoctorComponent } from './pages/isa/examination-r
 import { ViewAvailableExaminationComponent } from './pages/isa/examination-request-patient/view-available-examination/view-available-examination.component';
 import { ExaminationRequestAdminComponent } from './pages/isa/examination-request-admin/examination-request-admin.component';
 import { ApproveExaminationRequestAdminComponent } from './pages/isa/approve-examination-request-admin/approve-examination-request-admin.component';
+import { ReviewClinicComponent } from './pages/isa/review/review-clinic/review-clinic.component';
 
 const mapConfig: IConfig = {
   apiKey: '658f67a2-fd77-42e9-b99e-2bd48c4ccad4',
@@ -108,7 +109,8 @@ const mapConfig: IConfig = {
     AvailableExaminationOfDoctorComponent,
     ViewAvailableExaminationComponent,
     ExaminationRequestAdminComponent,
-    ApproveExaminationRequestAdminComponent
+    ApproveExaminationRequestAdminComponent,
+    ReviewClinicComponent
   ],
   imports: [
     BrowserModule,

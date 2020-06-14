@@ -28,6 +28,12 @@
         <td>{{ data.description }}</td>
         <td><a (click)="onEnter(data.id)" style=" cursor:pointer;">Enter</a></td>
         <td><a (click)="onView(data.id)" style="cursor:pointer;">View</a></td>
+        <td>
+          <a (click)="onRate(data.id)" style=" cursor:pointer;">Rate</a>
+        </td>
+        <td>
+          <a (click)="viewAverageRating(data.id)" style=" cursor:pointer;">View Average Rating</a>
+        </td>
       </tr>
     </tbody>
   </table>

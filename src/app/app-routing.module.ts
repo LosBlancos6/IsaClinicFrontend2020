@@ -42,6 +42,7 @@ import { AvailableExaminationOfDoctorComponent } from './pages/isa/examination-r
 import { ViewAvailableExaminationComponent } from './pages/isa/examination-request-patient/view-available-examination/view-available-examination.component';
 import { ExaminationRequestAdminComponent } from './pages/isa/examination-request-admin/examination-request-admin.component';
 import { ApproveExaminationRequestAdminComponent } from './pages/isa/approve-examination-request-admin/approve-examination-request-admin.component';
+import { ReviewClinicComponent } from './pages/isa/review/review-clinic/review-clinic.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/auth/login' },
@@ -81,6 +82,7 @@ const routes: Routes = [
       { path: 'free-doctor-in-clinic/:id', component: FreeDoctorInClinicComponent },
       { path: 'available-examination-of-doctor/:id', component: AvailableExaminationOfDoctorComponent },
       { path: 'view-available-examination/:id', component: ViewAvailableExaminationComponent },
+      { path: 'review-clinic/:id', component: ReviewClinicComponent },
 
       //Admin
       { path: 'create-doctor', component: CreateDoctorComponent },
