@@ -38,8 +38,8 @@ export class AdminComponent implements OnInit {
       country: [{ value: null, disabled: this.isReadOnly }, [Validators.required]],
       city: [{ value: null, disabled: this.isReadOnly }, [Validators.required]],
       address: [{ value: null, disabled: this.isReadOnly }, [Validators.required]],
-      ssn: [{ value: null, disabled: this.isReadOnly }, [Validators.required]],
-      email: [{ value: null, disabled: this.isReadOnly }, [Validators.email, Validators.required]],
+      ssn: [{ value: null, disabled: true }, [Validators.required]],
+      email: [{ value: null, disabled: true }, [Validators.email, Validators.required]],
       phone: [{ value: null, disabled: this.isReadOnly }, [Validators.required]]
     });
   }

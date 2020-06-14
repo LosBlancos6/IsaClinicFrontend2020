@@ -44,6 +44,10 @@ export class MedicalService {
     return this.http.get(`${this.baseUrl}medicalStaff/search/${id}${this.buildFilterRequest(filter)}`);
   }
 
+  public searchMedicalExaminationType(filter = {}, clinicId, examinationTypeId): Observable<any> {
+    return this.http.get(`${this.baseUrl}medicalStaff/${clinicId}/${examinationTypeId}/search${this.buildFilterRequest(filter)}`);
+  }
+
   private buildFilterRequest(filterObject: any): string {
     const values = Object.values(filterObject).filter(filterValue => filterValue !== null || filterValue !== '');
     if (values.length === 0) {

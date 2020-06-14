@@ -42,7 +42,8 @@ export class FreeDoctorInClinicComponent implements OnInit {
   onSearch() {
     console.log(this.form.value);
     const clinicId = this.route.snapshot.params.id;
-    this.medicalService.searchMedicalStaff(this.form.value, clinicId).subscribe(data => {
+    const object = JSON.parse(localStorage.getItem('Object'));
+    this.medicalService.searchMedicalExaminationType(this.form.value, clinicId, object.examinationType.id).subscribe(data => {
       this.listOfData = data;
     }, error => {
       alert('Doctor isn\'t in this clinic');

@@ -48,8 +48,14 @@ export class PatientListComponent implements OnInit {
     return this.fb.group({
       firstName: [''],
       lastName: [''],
-      email: ['']
+      ssn: ['']
     });
   }
 
+  onSearch() {
+    console.log(this.form.value);
+    this.patientService.searchPatients(this.form.value, this.id).subscribe(data => {
+      this.listOfData = data;
+    });
+  }
 }
