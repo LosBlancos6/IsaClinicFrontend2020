@@ -65,6 +65,8 @@ export class CreateExaminationAsAdminComponent implements OnInit {
       console.log(data);
       alert('Create Successful!');
       this.ngOnInit();
+    }, error => {
+      alert('Doctor doesn\'t work at that hours!');
     })
   }
 

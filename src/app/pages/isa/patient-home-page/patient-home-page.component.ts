@@ -60,7 +60,7 @@ export class PatientHomePageComponent implements OnInit {
     this.reviewService.averageClinicRating(id).subscribe(data => {
       console.log(data);
       if (isNaN(data)) {
-        alert('Doctor has not been rated yet!');
+        alert('Clinic has not been rated yet!');
       } else {
         alert('Average rate is ' + data);
       }

@@ -27,6 +27,8 @@ export class PatientListComponent implements OnInit {
     this.patientService.getAllPatientsByClinic(this.id).subscribe(data => {
       console.log(data);
       this.listOfData = data;
+    }, error => {
+      alert('Patient cannot be found in this clinic!');
     })
   }
   // private setupData(): void {
