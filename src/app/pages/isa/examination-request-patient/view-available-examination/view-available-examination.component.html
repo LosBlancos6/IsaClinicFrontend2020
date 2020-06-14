@@ -1,0 +1,41 @@
+<div [formGroup]="validateForm">
+  <h3>Booking Available Examination</h3>
+
+  <span style="display:flex">
+    <label>Examination Date:</label>
+    <input type="text" class="form-control" placeholder="examinationDate" aria-label="examinationDate"
+      aria-describedby="basic-addon1" formControlName="examinationDate">
+  </span>
+
+  <span style="display:flex">
+    <label>Start At:</label>
+    <input type="text" class="form-control" placeholder="startAt" aria-label="startAt" aria-describedby="basic-addon1"
+      formControlName="startAt">
+  </span>
+
+  <span style="display:flex">
+    <label>End At:</label>
+    <input type="text" class="form-control" placeholder="endAt" aria-label="endAt" aria-describedby="basic-addon1"
+      formControlName="endAt">
+  </span>
+
+  <span style="display:flex">
+    <label>Examination Type:</label>
+    <input type="text" class="form-control" placeholder="examinationTypeName" aria-label="examinationTypeName"
+      aria-describedby="basic-addon1" formControlName="examinationTypeName">
+  </span>
+
+  <span style="display:flex">
+    <label>Price:</label>
+    <input type="text" class="form-control" placeholder="examinationTypePrice" aria-label="examinationTypePrice"
+      aria-describedby="basic-addon1" formControlName="examinationTypePrice">
+  </span>
+
+  <button (click)="bookingExamination()" style="margin-top: 10px; width: 30%;" type="button"
+    class="btn btn-secondary">Booking</button>
+
+  <!-- <button (click)="cancel()" style="margin-top: 10px; width: 30%; margin-left: 20px;" type="button"
+    class="btn btn-secondary">Cancel </button> -->
+
+
+</div>

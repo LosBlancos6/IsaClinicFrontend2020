@@ -1,0 +1,31 @@
+<div class="fadeInDown">
+  <h3>Examination Request</h3>
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th>Start At</th>
+        <th>End At</th>
+        <th>Examination Date</th>
+        <th>Examination Type Name</th>
+        <th>Price</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of listOfData">
+        <td>{{ data.startAt }}</td>
+        <td>{{ data.endAt }}</td>
+        <td>{{ data.examinationDate }}</td>
+        <td>{{ data.examinationTypeName }}</td>
+        <td>{{ data.price }}</td>
+        <td>{{ data.requestStatus }}</td>
+        <td>
+          <a (click)="approveRequest(data.id)" style=" cursor:pointer;">Approve</a>
+        </td>
+        <td>
+          <a (click)="declineRequest(data.id)" style=" cursor:pointer;">Decline</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

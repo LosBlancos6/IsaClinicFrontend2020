@@ -11,9 +11,14 @@
 
     <!-- Login Form -->
     <form [formGroup]="loginForm">
-      <input type="text" id="email" class="fadeIn second" name="email" placeholder="email" formControlName="email">
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password"
+      <input type="text" id="email" class="fadeIn second" name="email" placeholder="Email" formControlName="email">
+      <div *ngIf="loginForm.get('email')?.dirty && loginForm.get('email')?.errors" class="text-danger">Please input your
+        email!</div>
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password"
         formControlName="password">
+      <div *ngIf="loginForm.get('password')?.dirty && loginForm.get('password')?.errors" class="text-danger">Please
+        input
+        minimum 3 characters!</div>
       <input (click)="onLogin()" [disabled]="!loginForm.valid" type="submit" class="fadeIn fourth" value="Log In">
     </form>
     <!-- <div>
@@ -21,7 +26,7 @@
     </div> -->
     <!-- Remind Passowrd -->
     <div id="formFooter">
-      <a class="underlineHover" href="#">Forgot Password?</a>
+      <a class="underlineHover" routerLink="/auth/registration">Register now?</a>
     </div>
 
   </div>

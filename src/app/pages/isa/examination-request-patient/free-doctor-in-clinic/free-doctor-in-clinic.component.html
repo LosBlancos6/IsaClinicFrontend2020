@@ -1,0 +1,39 @@
+<div class="fadeInDown">
+  <h3>Free Doctors</h3>
+
+  <form style="display:flex" [formGroup]="form">
+    <input type="text" class="form-control" placeholder="First Name" aria-label="firstName"
+      aria-describedby="basic-addon1" formControlName="firstName">
+    <input type="text" class="form-control" placeholder="Last Name" aria-label="lastName"
+      aria-describedby="basic-addon1" formControlName="lastName">
+    <input type="text" class="form-control" placeholder="Examination Type" aria-label="examinationType"
+      aria-describedby="basic-addon1" formControlName="examinationType">
+    <!-- <button (click)="backToListClinics()" style="width: 25%;" type="button" class="btn btn-primary">Seacrh</button> -->
+    <button type="submit" (click)="onSearch()" style="width: 25%;" class="btn btn-primary"><i
+        class="fa fa-search"></i></button>
+  </form>
+
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Examination Type</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of listOfData">
+        <td>{{ data.firstName }}</td>
+        <td>{{ data.lastName }}</td>
+        <td>{{ data.examinationType }}</td>
+        <td>{{ data.email }}</td>
+        <td>
+          <a (click)="onView(data.id)" style=" cursor:pointer;">View</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button (click)="back()" style="margin-top: 10px; width: 30%;" type="button" class="btn btn-secondary">Back</button>
+</div>

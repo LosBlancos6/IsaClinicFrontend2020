@@ -1,3 +1,73 @@
-<p>
-  registration works!
-</p>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <img src="https://pngimage.net/wp-content/uploads/2018/06/registration-logo-png-7.png" id="icon"
+                alt="User Icon" />
+        </div>
+
+        <!-- Login Form -->
+        <form [formGroup]="registerForm">
+            <input type="text" id="firstName" class="fadeIn second" name="firstName" placeholder="First name"
+                formControlName="firstName">
+            <div *ngIf="registerForm.get('firstName')?.dirty && registerForm.get('firstName')?.errors"
+                class="text-danger"> Please input minimum 3 characters!</div>
+            <input type="text" id="lastName" class="fadeIn second" name="lastName" placeholder="Last name"
+                formControlName="lastName">
+            <div *ngIf="registerForm.get('lastName')?.dirty && registerForm.get('lastName')?.errors"
+                class="text-danger"> Please
+                input minimum 3 characters!</div>
+            <input type="text" id="country" class="fadeIn second" name="country" placeholder="Country"
+                formControlName="country">
+            <div *ngIf="registerForm.get('country')?.dirty && registerForm.get('country')?.errors" class="text-danger">
+                Please
+                input minimum 3 characters!</div>
+            <input type="text" id="city" class="fadeIn second" name="city" placeholder="City" formControlName="city">
+            <div *ngIf="registerForm.get('city')?.dirty && registerForm.get('city')?.errors" class="text-danger">
+                Please
+                input minimum 3 characters!</div>
+            <input type="text" id="address" class="fadeIn second" name="address" placeholder="Address"
+                formControlName="address">
+            <div *ngIf="registerForm.get('address')?.dirty && registerForm.get('address')?.errors" class="text-danger">
+                Please
+                input minimum 3 characters!</div>
+            <input type="text" id="ssn" class="fadeIn second" name="ssn" placeholder="Social Security Number"
+                formControlName="ssn">
+            <div *ngIf="registerForm.get('ssn')?.dirty && registerForm.get('ssn')?.errors" class="text-danger">
+                Please
+                input only numbers(minimum 3)!</div>
+            <input type="text" id="email" class="fadeIn second" name="email" placeholder="Email"
+                formControlName="email">
+            <div *ngIf="registerForm.get('email')?.dirty && registerForm.get('email')?.errors" class="text-danger">
+                Please
+                input your email!</div>
+            <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password"
+                formControlName="password">
+            <div *ngIf="registerForm.get('password')?.dirty && registerForm.get('password')?.errors"
+                class="text-danger">
+                Please
+                input minimum 3 characters!</div>
+            <input type="password" id="rePassword" class="fadeIn third" name="rePassword" placeholder="Confirm Password"
+                formControlName="rePassword">
+            <div *ngIf="registerForm.get('rePassword')?.dirty && registerForm.get('rePassword')?.errors"
+                class="text-danger">
+                Please repeat your password!</div>
+            <input type="text" id="phone" class="fadeIn third" name="phone" placeholder="Phone Number"
+                formControlName="phone">
+            <div *ngIf="registerForm.get('phone')?.dirty && registerForm.get('phone')?.errors" class="text-danger">
+                Please
+                input only numbers(minimum 3)!</div>
+            <input style="height: 50px;" (click)="onRegister()" [disabled]="!registerForm.valid" type="submit"
+                class="fadeIn fourth" value="Register">
+
+        </form>
+        <!-- <div>
+      {{errorMessage}}
+    </div> -->
+        <!-- Remind Passowrd -->
+
+
+    </div>
+</div>

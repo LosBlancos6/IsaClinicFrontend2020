@@ -1,0 +1,40 @@
+<div id="one" [formGroup]="validateForm">
+  <h3>Create Available Examination</h3> <br>
+
+  <span style="display:flex">
+    <label style="padding-top: 20px;">Choose Date: </label>
+    <mat-form-field style="width: 40%;">
+      <input matInput [matDatepicker]="picker" formControlName="date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <br>
+  </span>
+
+  <span style="display:flex" class="md-form md-outline">
+    <label>Select Time:</label>
+    <input style="width: 40%;" type="time" id="default-picker" class="form-control" placeholder="Select time"
+      formControlName="time">
+  </span>
+
+  <span style="display:flex">
+    <label>Examination Type:</label>
+    <select class="browser-default custom-select" style="width: 40%;" formControlName="examinationTypeId">
+      <option *ngFor="let item of listOfExaminationType" [value]="item.id">{{item.name}}</option>
+    </select>
+  </span>
+
+  <!-- <span style="display:flex" *ngIf="isSearched">
+    <label>Choose Doctor:</label>
+    <select class="browser-default custom-select" style="width: 40%;" formControlName="doctorId">
+      <option *ngFor="let item of listOfDoctors" [value]="item.id">{{item.firstName}}</option>
+    </select>
+  </span> -->
+
+  <br>
+
+  <button (click)="onClick()" [disabled]="!validateForm.valid" style="margin-top: 10px; width: 30%;" type="button"
+    class="btn btn-secondary">Create</button>
+
+
+</div>

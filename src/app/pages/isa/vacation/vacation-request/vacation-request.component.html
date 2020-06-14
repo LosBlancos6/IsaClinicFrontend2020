@@ -1,0 +1,24 @@
+<div id="one">
+  <h3>Schedule a Vacation</h3> <br>
+
+  <kendo-daterange>
+    <label>
+      <span class="label">Start</span>
+      <kendo-dateinput kendoDateRangeStartInput [(value)]="range.start"></kendo-dateinput>
+    </label>
+    <label>
+      <span class="label">End</span>
+      <kendo-dateinput kendoDateRangeEndInput [(value)]="range.end"></kendo-dateinput>
+    </label>
+  </kendo-daterange>
+
+  <br>
+
+  <div [formGroup]="validateForm">
+    <textarea name="message" placeholder="Description..." formControlName="description"></textarea>
+  </div>
+
+  <button (click)="onSchedule()" [disabled]="!(provera() && validateForm.valid)" style="margin-top: 10px; width: 30%;"
+    type="button" class="btn btn-secondary">Send Request</button>
+
+</div>

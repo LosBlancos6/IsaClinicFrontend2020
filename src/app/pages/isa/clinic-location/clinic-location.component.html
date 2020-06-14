@@ -1,0 +1,16 @@
+<div id="one">
+
+  <h3>Clinic Location</h3> <br>
+
+  <div class="container">
+    <angular-yandex-map [center]="[x, y]" [zoom]="12">
+      <angular-yandex-placemark [geometry]="[x, y]"></angular-yandex-placemark>
+    </angular-yandex-map>
+    <button (click)="backToClinicProfile()" style="width: 30%;" type="button" class="btn btn-secondary">Back</button>
+    <button (click)="reloadMap()" class="btn btn-primary" style="width: 30%;  margin-left: 20px;">Reload Map</button>
+  </div>
+  <br>
+  <br>
+
+
+</div>

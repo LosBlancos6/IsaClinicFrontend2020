@@ -1,0 +1,61 @@
+<div [formGroup]="validateForm">
+  <h3 *ngIf="isReadOnly">Doctor Profile</h3>
+  <h3 *ngIf="!isReadOnly">Your Profile</h3>
+
+  <span style="display:flex">
+    <label>First Name:</label>
+    <input type="text" class="form-control" placeholder="First name" aria-label="First name"
+      aria-describedby="basic-addon1" formControlName="firstName">
+  </span>
+
+  <span style="display:flex">
+    <label>Last name:</label>
+    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name"
+      aria-describedby="basic-addon1" formControlName="lastName">
+  </span>
+
+  <span style="display:flex">
+    <label>Address:</label>
+    <input type="text" class="form-control" placeholder="Address" aria-label="Address" aria-describedby="basic-addon1"
+      formControlName="address">
+  </span>
+
+  <span style="display:flex">
+    <label>Country:</label>
+    <input type="text" class="form-control" placeholder="Country" aria-label="Country" aria-describedby="basic-addon1"
+      formControlName="country">
+  </span>
+
+  <span style="display:flex">
+    <label>City:</label>
+    <input type="text" class="form-control" placeholder="City" aria-label="City" aria-describedby="basic-addon1"
+      formControlName="city">
+  </span>
+
+  <span style="display:flex">
+    <label>Security Number:</label>
+    <input type="text" class="form-control" placeholder="Social Security Number" aria-label="Social Security Number"
+      aria-describedby="basic-addon1" formControlName="ssn">
+  </span>
+
+  <span style="display:flex">
+    <label>Email:</label>
+    <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1"
+      formControlName="email">
+  </span>
+
+  <span style="display:flex">
+    <label>Phone Number:</label>
+    <input type="text" class="form-control" placeholder="Phone Number" aria-label="Phone Number"
+      aria-describedby="basic-addon1" formControlName="phone">
+  </span>
+
+  <button (click)="backToList()" style="margin-top: 10px; width: 30%;" type="button" class="btn btn-secondary">Back
+    to list</button>
+
+  <button *ngIf="!isReadOnly" (click)="updateMedical()" style="margin-top: 10px; width: 30%; margin-left: 20px;"
+    type="button" class="btn btn-secondary">Save
+    your
+    changes</button>
+
+</div>

@@ -1,15 +1,15 @@
 <header>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <div><a href="https:/www.google.com" class="navbar-brand">Clinic
+    <div><a (click)="toggleSidebar()" class="navbar-brand"><img
+          src="https://i.ya-webdesign.com/images/menu-icon-png-3-lines-16.png"
+          style="width: 35px; height: 35px;  cursor:pointer;" alt="">
       </a></div>
-    <ul class="navbar-nav">
-      <li><a routerLink="/login" class="nav-link">Home</a></li>
-    </ul>
+    <div class="navbar-brand">
+      <a>IsaClinic2020</a>
+    </div>
 
     <ul class="navbar-nav navbar-collapse justify-content-end">
-      <li><a routerLink="/login" class="nav-link">Login</a>
-      </li>
-      <li><a routerLink="/logout" class="nav-link">Logout</a>
+      <li><a (click)="onLogout()" class="nav-link" style=" cursor:pointer;">Logout</a>
       </li>
     </ul>
   </nav>
@@ -18,23 +18,69 @@
 <ng-sidebar-container>
   <!-- Sidebar-->
   <ng-sidebar [opened]="opened">
-    <p>Sidebar Contents</p>
-    <button (click)="toggleSidebar()">Close Sidebar</button>
+    <!-- <button id="two" (click)="toggleSidebar()" class="btn btn-outline-danger">Close Sidebar</button> -->
     <ul class="menu">
-      <li><a routerLink="/" (click)="toggleSidebar()">Dashboard</a></li>
-      <li><a routerLink="/auth" (click)="toggleSidebar()">Posts</a></li>
-      <li><a routerLink="/contact" (click)="toggleSidebar()">Contact</a></li>
+      <span class="badge badge-secondary" style="width: 50px;">Profile</span>
+      <li class="btn btn-light"><a routerLink="/dashboard/my-profile">My
+          Profile</a></li>
+      <li *ngIf="checkRole([adminRole, medicalRole])" class="btn btn-light"><a
+          [routerLink]="['/dashboard/change-password', user.id]">Change
+          Password</a></li>
+      <li *ngIf="checkRole([adminRole]) && user.adminType=='CLINIC_ADMIN'" class="btn btn-light">
+        <a routerLink="/dashboard/create-examination-as-admin">Create Examination</a>
+      </li>
+      <li *ngIf="checkRole([medicalRole])" class="btn btn-light">
+        <a routerLink="/dashboard/create-available-examination">Create Available Examination</a>
+      </li>
+      <li *ngIf="checkRole([patientRole])" class="btn btn-light">
+        <a routerLink="/dashboard/scheduling-examination-as-patient">Schedule Examination</a>
+      </li>
+      <li *ngIf="checkRole([patientRole])" class="btn btn-light">
+        <a routerLink="/dashboard/health-record">Health Record</a>
+      </li>
+      <li *ngIf="checkRole([medicalRole])" class="btn btn-light">
+        <a routerLink="/dashboard/vacation-request">Schedule Vacation</a>
+      </li>
+      <li *ngIf="checkRole([adminRole]) && user.adminType=='CLINIC_CENTER_ADMIN'" class="btn btn-light">
+        <a routerLink="/dashboard/registration-requests">Registration Requests</a>
+      </li>
+      <li *ngIf="checkRole([adminRole]) && user.adminType=='CLINIC_ADMIN'" class="btn btn-light">
+        <a routerLink="/dashboard/examination-request-admin">Examination Requests</a>
+      </li>
+      <li *ngIf="checkRole([adminRole]) && user.adminType=='CLINIC_ADMIN'" class="btn btn-light">
+        <a routerLink="/dashboard/vacation-request-list">Vacation Requests</a>
+      </li>
+
+
+      <span class="badge badge-secondary" style="width: 50px;">List</span>
+      <li *ngIf="checkRole([patientRole])" class="btn btn-light"><a routerLink="/dashboard/choose-clinic">Choose
+          Clinic</a>
+      </li>
+      <li *ngIf="checkRole([adminRole])" class="btn btn-light"><a routerLink="/dashboard/admin-list">Admins</a></li>
+      <li *ngIf="checkRole([adminRole]) && user.adminType=='CLINIC_ADMIN'" class="btn btn-light"><a
+          [routerLink]="['/dashboard/clinic', user.myClinic.id, 'medical']">Medicals</a></li>
+      <li *ngIf="checkRole([adminRole, medicalRole])" class="btn btn-light"><a
+          [routerLink]="['/dashboard/clinic', user.myClinic.id, 'patients']">Patients</a></li>
+      <li *ngIf="checkRole([adminRole])" class="btn btn-light"><a routerLink="/dashboard/clinic-list">Clinics</a></li>
+      <li *ngIf="checkRole([adminRole]) && user.adminType=='CLINIC_ADMIN'" class="btn btn-light"><a
+          routerLink="/dashboard//examination-type-list">Examination Types</a></li>
+      <li *ngIf="checkRole([adminRole]) && user.adminType=='CLINIC_ADMIN'" class="btn btn-light">
+        <a routerLink="/dashboard/operation-room-list">Operation Rooms</a>
+      </li>
     </ul>
   </ng-sidebar>
 
   <div ng-sidebar-content>
     <!--Page Header-->
-    <button (click)="toggleSidebar()">
+    <!-- <button (click)="toggleSidebar()" class="btn btn-primary">
       Open Sidebar
-    </button>
+    </button> -->
 
     <!--Page Body-->
-    <router-outlet></router-outlet>
+    <div id="one">
+      <router-outlet></router-outlet>
+    </div>
+
 
   </div>
 </ng-sidebar-container>

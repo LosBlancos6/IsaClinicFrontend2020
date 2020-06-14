@@ -1,0 +1,23 @@
+<div id="one" [formGroup]="validateForm">
+  <h3>Create Operation Room</h3> <br>
+
+  <input type="text" class="form-control" placeholder="Name" aria-label="name" aria-describedby="basic-addon1"
+    formControlName="name">
+  <div id="validate" *ngIf="validateForm.get('name')?.dirty && validateForm.get('name')?.errors" class="text-danger">
+    Please
+    input
+    minimum 3 characters!</div>
+
+  <input type="text" class="form-control" placeholder="Number of room" aria-label="number"
+    aria-describedby="basic-addon1" formControlName="number">
+  <div id="validate" *ngIf="validateForm.get('number')?.dirty && validateForm.get('number')?.errors"
+    class="text-danger">
+    Please
+    input only numbers </div>
+
+  <button (click)="backToList()" style="margin-top: 10px; width: 24%;" type="button" class="btn btn-secondary">Back
+    to list</button>
+
+  <button (click)="createOperationRoom()" [disabled]="!validateForm.valid"
+    style="margin-top: 10px; width: 24%; margin-left: 20px;" type="button" class="btn btn-secondary">Create</button>
+</div>

@@ -1,0 +1,49 @@
+<div [formGroup]="validateForm">
+  <h3>Clinic Profile</h3>
+
+  <span style="display:flex">
+    <label>Name:</label>
+    <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1"
+      formControlName="name">
+  </span>
+
+  <span style="display:flex">
+    <label>Address:</label>
+    <input style="width: 25%;" type="text" class="form-control" placeholder="Address" aria-label="Address"
+      aria-describedby="basic-addon1" formControlName="address">
+    <button (click)="viewOnMap()" class="btn btn-primary"
+      style="width:25%; height:40px; margin-top: 8px; opacity: 0.9;">View on
+      Map</button>
+  </span>
+
+  <span style="display:flex">
+    <label>Description:</label>
+    <input type="text" class="form-control" placeholder="Description" aria-label="Description"
+      aria-describedby="basic-addon1" formControlName="description">
+  </span>
+
+  <span style="display:flex">
+    <label>X coordinate:</label>
+    <input type="text" class="form-control" placeholder="Xcoordinate" aria-label="Xcoordinate"
+      aria-describedby="basic-addon1" formControlName="x">
+  </span>
+
+  <span style="display:flex">
+    <label>Y coordinate:</label>
+    <input type="text" class="form-control" placeholder="Ycoordinate" aria-label="Ycoordinate"
+      aria-describedby="basic-addon1" formControlName="y">
+  </span>
+
+
+  <button *ngIf="checkRole([patientRole])" (click)="backToList()" style="margin-top: 10px; width: 30%;" type="button"
+    class="btn btn-secondary">Back
+    to list</button>
+
+  <button *ngIf="checkRole([adminRole])" (click)="backToListClinics()" style="margin-top: 10px; width: 30%;"
+    type="button" class="btn btn-secondary">Back
+    to list</button>
+
+  <button *ngIf="checkRole([adminRole])" (click)="updateClinic()"
+    style="margin-top: 10px; width: 30%; margin-left: 20px;" type="button" class="btn btn-secondary">Edit
+    Clinic</button>
+</div>
