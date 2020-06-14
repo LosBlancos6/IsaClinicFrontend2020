@@ -41,6 +41,8 @@ export class ExaminationTypeListComponent implements OnInit {
       // console.log(data);
       alert('Delete Successful!');
       this.ngOnInit();
+    }, error => {
+      alert('You can\'t delete examination type that is already scheduled!');
     })
   }
 }

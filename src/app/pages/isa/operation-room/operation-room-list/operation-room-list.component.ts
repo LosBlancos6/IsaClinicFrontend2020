@@ -22,7 +22,8 @@ export class OperationRoomListComponent implements OnInit {
   }
 
   private setupData(): void {
-    this.operationRoomService.getOperationRooms().subscribe(data => {
+    const user = JSON.parse(localStorage.getItem('user'));
+    this.operationRoomService.getOperationRoomsByClinicId(user.myClinic.id).subscribe(data => {
       this.listOfData = data;
     })
   }
@@ -57,6 +58,8 @@ export class OperationRoomListComponent implements OnInit {
       // console.log(data);
       alert('Delete Successful!');
       this.ngOnInit();
+    }, error => {
+      alert('This operation room is booked for examination!');
     })
   }
 

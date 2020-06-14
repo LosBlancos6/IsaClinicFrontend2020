@@ -56,6 +56,8 @@ export class PatientListComponent implements OnInit {
     console.log(this.form.value);
     this.patientService.searchPatients(this.form.value, this.id).subscribe(data => {
       this.listOfData = data;
+    }, error => {
+      alert('Patient isn\'t in this clinic');
     });
   }
 }

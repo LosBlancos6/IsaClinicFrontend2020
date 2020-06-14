@@ -30,19 +30,19 @@ export class VacationRequestListComponent implements OnInit {
   //   this.router.navigateByUrl(`dashboard/admin-profile/${id}`)
   // }
 
-  // approveRequest(id) {
-  //   this.vacationRequestService.approveVacationRequest(id).subscribe(data => {
-  //     console.log(data);
-  //     alert('Approved succed');
-  //     this.ngOnInit();
-  //   })
-  // }
+  approveRequest(id) {
+    this.vacationRequestService.approveVacationRequest(id).subscribe(data => {
+      console.log(data);
+      alert('Approved succed');
+      this.ngOnInit();
+    })
+  }
 
-  // declineRequest(id) {
-  //   this.vacationRequestService.declineVacationRequest(id).subscribe(data => {
-  //     console.log(data);
-  //     alert('Denied succed');
-  //     this.ngOnInit();
-  //   })
-  // }
+  declineRequest(id) {
+    this.vacationRequestService.declineVacationRequest(id).subscribe(data => {
+      console.log(data);
+      alert('Denied succed');
+      this.ngOnInit();
+    })
+  }
 }

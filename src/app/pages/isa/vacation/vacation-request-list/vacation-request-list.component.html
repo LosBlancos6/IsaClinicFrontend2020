@@ -7,6 +7,7 @@
         <th>Start At</th>
         <th>End At</th>
         <th>Description</th>
+        <th>Status</th>
       </tr>
     </thead>
     <tbody>
@@ -15,6 +16,7 @@
         <td>{{ data.startAt }}</td>
         <td>{{ data.endAt }}</td>
         <td>{{ data.description }}</td>
+        <td>{{ data.requestStatus }}</td>
         <td>
           <a (click)="approveRequest(data.id)" style=" cursor:pointer;">Approve</a>
         </td>

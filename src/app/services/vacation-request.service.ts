@@ -24,12 +24,12 @@ export class VacationRequestService {
     return this.http.get(`${this.baseUrl}vacation-request/${id}/clinic`);
   }
 
-  // public approveVacationRequest(id): Observable<any> {
-  //   return this.http.put(`${this.baseUrl}vacation-request/${id}/approve`, id);
-  // }
+  public approveVacationRequest(id): Observable<any> {
+    return this.http.put(`${this.baseUrl}vacation-request/${id}/approve`, id);
+  }
 
-  // public declineVacationRequest(id): Observable<any> {
-  //   return this.http.put(`${this.baseUrl}vacation-request/${id}/decline`, id);
-  // }
+  public declineVacationRequest(id): Observable<any> {
+    return this.http.put(`${this.baseUrl}vacation-request/${id}/decline`, id);
+  }
 
 }
